@@ -150,7 +150,7 @@ html {
 #content-footer-wrapper{
     display: flex;
     min-height: calc(100vh - var(--border-distance));
-    width: calc(100vw - 2 * var(--border-distance));
+    width: calc(100% - 2 * var(--border-distance));
     flex-direction: column;
     position: relative;
     top: var(--border-distance);
@@ -182,4 +182,68 @@ html {
     cursor: pointer;
 }
 
+@media (max-aspect-ratio: 4000/2410) {
+    #banner-img { /*Keeps the banner image on fullscreen when the viewport becomes narrower*/
+        height: calc(100vh - 2 * var(--border-distance));
+        width: auto !important;
+    }
+}
+@media (max-aspect-ratio: 4000/2460) {
+    #banner-img{ /*Keeps the banner image in the center when the viewport becomes narrower*/
+        margin-left: calc(0px - ((16/9 * (100vh - 2 * var(--border-distance)) - 100%))/2) !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-aspect-ratio: 1000/858) {
+    #banner-img{
+        margin: auto !important;
+        width: calc(100% - 2 * var(--border-distance)) !important;    
+        height: auto !important;
+    }
+}
+
+@media (max-aspect-ratio: 450/735) {
+    #banner-img{
+        height: calc(100vh - 2 * var(--border-distance)) !important;
+        width: auto !important;
+    }
+}
+
+@media (max-aspect-ratio: 450/853) {
+    #banner-img{
+        height: auto !important;
+        width: calc(100% - 2 * var(--border-distance)) !important;
+    }
+}
+
+@media (max-width: 1400px) {
+    :root {
+        --border-distance: 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --border-distance: 4rem;
+    }
+}
+@media (max-width: 400px) {
+    :root {
+        --border-distance: 3rem;
+    }
+}
+
+#banner {
+    margin-top: var(--border-distance);
+    overflow: hidden;
+    height: calc(100vh - 2 * var(--border-distance));
+}
+
+#banner-img {
+    width: calc(100% - 2 * var(--border-distance));    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
