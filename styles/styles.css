@@ -1,3 +1,4 @@
+/*---------------------GENERAL STYLING---------------------*/
 html {
     height: 100%;
   }
@@ -7,11 +8,210 @@ html {
     padding: 0;
 }
 
+:root {
+    --light-blue-bg: #008db5;
+    --dark-blue-bg: #003543;
+    --red-main: #85222c;
+    --blue-main: #005b6c;
+    --cream-white: #fdf9f6;
+    --border-distance: 6rem;
+}
+
 @font-face {
     font-family: 'digital-dream';
     src: URL('/fonts/digital-dream.regular.ttf') format('truetype');
     /* https://www.1001fonts.com/digital-dream-font.html#license */
 }
+
+@font-face {
+    font-family: 'opti-jake-osf';
+    src: URL('/fonts/opti-jake-osf.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'itc-grouch';
+    src: url('/fonts/itc-grouch.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('/fonts/ubuntu-regular.ttf') format('truetype');
+
+}
+
+
+
+/*---------------------HOME STYLING---------------------*/
+
+@media (max-width: 1400px) {
+    :root {
+        --border-distance: 5rem;
+    }
+    #home-body h1 {
+        font-size: 4vw !important;
+    }
+}
+
+/*This is where the hamburger starts displaying*/
+@media (max-width: 1000px) {
+    .album-logo-wrapper>div {
+        flex: 1 0 100% !important;
+        justify-content: center !important;
+    }
+    #album-cover {
+        margin: 0 0 calc(var(--border-distance) / 2) 0 !important;
+    }
+    .table-wrapper {
+        margin: calc(var(--border-distance) / 2) auto 0 auto !important;
+    }
+    #contact{
+        width: 70% !important;
+    }
+
+    #menuToggle {
+        display: block !important;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+    #menuToggle a:hover {
+        color: tomato;
+    }
+    #menuToggle input {
+        display: block;
+        width: 43px;
+        height: calc(var(--border-distance) * (3/5));
+        position: absolute;
+        top: 10px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+    /*
+ * Just a quick hamburger
+ */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 2px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.3s cubic-bezier(.6,-0.28,.74,.05), 
+                    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
+                    opacity 0.35s ease;
+
+    }
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+        margin-bottom: 0px;
+    }
+    /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-0.3px, 0px);
+        background: #232323;
+    }
+    /*
+ * But let's hide the middle one.
+ */
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(-3px, 5px);
+    }
+    /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+    #menu {
+        position: absolute;
+        width: 100%;
+        margin: -110px 0 0 0;
+        padding: 125px 0px 20px 2px;
+        box-sizing: border-box;
+        background: rgba(253, 249, 246, 0.9);
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translate(0, -100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+        font-family: opti-jake-osf;
+    }
+    /*
+ * And let's slide it in from the left
+ */
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+
+    .left-header-icons, .navigation{
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 800px){
+    #pics-dl{
+        grid-template-columns: 20vw 20vw 20vw !important;
+        grid-template-rows: 15vw!important;
+    }
+}
+
+
+@media (max-width: 600px) {
+    :root {
+        --border-distance: 4rem;
+    }
+    #home-body h1 {
+        font-size: 2.5rem !important;
+    }
+    #album-cover div {
+        width: calc(7 * var(--border-distance)) !important;
+    }
+    .logo-wrapper {
+        grid-template-columns: calc(3.5 * var(--border-distance)) calc(3.5 * var(--border-distance)) !important;
+    }
+
+    .header-icon {
+        height: 2.5rem !important;
+    }
+    #contact{
+        width: 85% !important;
+    }
+}
+
 
 
 #countdown-body{
@@ -170,9 +370,9 @@ animation: flicker-regular .5s infinite;
 }
 
 @keyframes flicker-regular {
-0%   { opacity:1; }
-50%  { opacity:0; }
-100% { opacity:1; }
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
 }
 
 @keyframes flicker-unregular {
@@ -185,18 +385,18 @@ animation: flicker-regular .5s infinite;
 }
 
 #loader {
-/*https://projects.lukehaas.me/css-loaders/*/
-position: absolute;
-font-size: 1rem;
-width: 1em;
-height: 1em;
-top: 50%;
-left: 50%;
-border-radius: 50%;
-text-indent: -9999em;
--webkit-animation: load5 1.1s infinite ease;
-animation: load5 1.1s infinite ease;
-transform: translate(-50%, -50%);
+    /*https://projects.lukehaas.me/css-loaders/*/
+    position: absolute;
+    font-size: 1rem;
+    width: 1em;
+    height: 1em;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    text-indent: -9999em;
+    -webkit-animation: load5 1.1s infinite ease;
+    animation: load5 1.1s infinite ease;
+    transform: translate(-50%, -50%);
 }
 
 @-webkit-keyframes load5 {

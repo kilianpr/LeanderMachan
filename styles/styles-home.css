@@ -1,0 +1,646 @@
+
+@media (max-width: 1400px) {
+    :root {
+        --border-distance: 5rem;
+    }
+    #home-body h1 {
+        font-size: 4vw !important;
+    }
+}
+
+/*This is where the hamburger starts displaying*/
+@media (max-width: 1000px) {
+    .album-logo-wrapper>div {
+        flex: 1 0 100% !important;
+        justify-content: center !important;
+    }
+    #album-cover {
+        margin: 0 0 calc(var(--border-distance) / 2) 0 !important;
+    }
+    .table-wrapper {
+        margin: calc(var(--border-distance) / 2) auto 0 auto !important;
+    }
+    #contact{
+        width: 70% !important;
+    }
+
+    #menuToggle {
+        display: block !important;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+    #menuToggle a:hover {
+        color: tomato;
+    }
+    #menuToggle input {
+        display: block;
+        width: 43px;
+        height: calc(var(--border-distance) * (3/5));
+        position: absolute;
+        top: 10px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+    /*
+ * Just a quick hamburger
+ */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 2px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.3s cubic-bezier(.6,-0.28,.74,.05), 
+                    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
+                    opacity 0.35s ease;
+
+    }
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+        margin-bottom: 0px;
+    }
+    /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-0.3px, 0px);
+        background: #232323;
+    }
+    /*
+ * But let's hide the middle one.
+ */
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(-3px, 5px);
+    }
+    /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+    #menu {
+        position: absolute;
+        width: 100%;
+        margin: -110px 0 0 0;
+        padding: 125px 0px 20px 2px;
+        box-sizing: border-box;
+        background: rgba(253, 249, 246, 0.9);
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translate(0, -100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+        font-family: opti-jake-osf;
+    }
+    /*
+ * And let's slide it in from the left
+ */
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+
+    .left-header-icons, .navigation{
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 800px){
+    #pics-dl{
+        grid-template-columns: 20vw 20vw 20vw !important;
+        grid-template-rows: 15vw!important;
+    }
+}
+
+
+@media (max-width: 600px) {
+    :root {
+        --border-distance: 4rem;
+    }
+    #home-body h1 {
+        font-size: 2.5rem !important;
+    }
+    #album-cover div {
+        width: calc(7 * var(--border-distance)) !important;
+    }
+    .logo-wrapper {
+        grid-template-columns: calc(3.5 * var(--border-distance)) calc(3.5 * var(--border-distance)) !important;
+    }
+
+    .header-icon {
+        height: 2.5rem !important;
+    }
+    #contact{
+        width: 85% !important;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) and (min-aspect-ratio: 6/10){
+    #banner{
+        height: calc(100vh - 2 * var(--border-distance));
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 600px) and (min-aspect-ratio: 17/25){
+    #banner-img{
+        margin-top: -50px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --border-distance: 3rem;
+    }
+
+    .header-icon {
+        height: calc(var(--border-distance) / 1.5) !important;
+    }
+
+    #menuToggle input{
+        width: 28.66px;
+        top: 6.66px;
+        left: -3.33px;
+    }
+
+    #menuToggle span{
+        width: 22px;
+        height: 1.33px;
+        margin-bottom: 3.33px;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(-1.5px, 3px);
+    }
+
+}
+
+#menuToggle{
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    background-image: linear-gradient(var(--light-blue-bg), var(--dark-blue-bg));
+    background-attachment: fixed;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+span.avoidwrap {
+    display: inline-block;
+}
+
+#bottom, #left, #right {
+    background: var(--cream-white);
+    position: fixed;
+}
+
+#left, #right {
+    top: 0;
+    bottom: 0;
+    width: var(--border-distance);
+}
+
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-distance);
+    z-index: 999;
+    text-align: center;
+    vertical-align: middle;
+    line-height: var(--border-distance);
+}
+
+#bottom a img {
+    height: calc(var(--border-distance) * (3 / 4));
+    padding: calc(var(--border-distance) / 8);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: calc(100% - 2 * var(--border-distance));
+    height: var(--border-distance);
+    z-index: 9999;
+    background-color: var(--cream-white);
+}
+
+.header-icon {
+    height: calc(var(--border-distance) / 2);
+    display: block;
+    cursor: pointer;
+}
+
+.navigation {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-header-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.right-header-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul {
+    font-size: 0;
+}
+
+nav ul span{
+    display: inline-block;
+    width: calc(var(--border-distance) / 8);
+    font-size: calc(var(--border-distance) / 2);
+}
+
+nav ul li {
+    padding-left: calc(var(--border-distance) / 4);
+    padding-right: calc(var(--border-distance) / 4);
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: opti-jake-osf;
+    color: black;
+    font-size: calc(var(--border-distance) / 2);
+}
+
+@media (min-aspect-ratio: 10/6) {
+    #banner{
+        height: calc(100vh - 2 * var(--border-distance));
+        overflow: hidden;
+    }
+}
+
+@media (min-aspect-ratio: 17/9) {
+    #banner-img {
+        margin-top: -20px;
+    }
+}
+
+#banner-img {
+    width: calc(100vw - 2 * var(--border-distance));    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--border-distance);
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - 2 * var(--border-distance));
+    background-image: linear-gradient(var(--light-blue-bg), var(--dark-blue-bg));
+    background-attachment: fixed;
+    min-height: calc(100vh - 2 * var(--border-distance));
+    position: relative;
+}
+
+/* This element defines the size the iframe will take.
+   In this example we want to have a ratio of 25:14 
+
+#videos {
+    display: none;
+    position: relative;
+    width: 75%;
+    height: 0;
+    margin: 0rem auto;
+    padding-bottom: 42.19%;
+}
+
+Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent
+
+#videos iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}*/
+
+#music {
+    padding-top: calc(2 * var(--border-distance));
+    padding-bottom: calc(2 * var(--border-distance));
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+h1 {
+    color: var(--cream-white);
+    font-size: var(--border-distance);
+    padding-bottom: calc(var(--border-distance) / 2);
+    text-align: center;
+}
+
+.album-logo-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#album-cover {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: calc(var(--border-distance) / 2);
+}
+
+#album-cover div {
+    width: calc(8 * var(--border-distance))
+}
+
+#album-cover div img {
+    width: 100%;
+}
+
+.table-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: calc(var(--border-distance) / 2);
+}
+
+.logo-wrapper {
+    display: grid;
+    grid-template-columns: calc(4 * var(--border-distance)) calc(4 * var(--border-distance));
+    grid-template-rows: var(--border-distance) var(--border-distance);
+    grid-row-gap: calc((1 / 3) * var(--border-distance));
+    grid-column-gap: calc((1 / 2) * var(--border-distance));
+}
+
+.button-bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-origin: content-box;
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: calc(var(--border-distance) / 6);
+    font-size: 2rem;
+}
+
+.logo-wrapper a {
+    text-indent: 120%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#spotify-logo {
+    background-image: url(/images/logos/spotify/01_RGB/02_PNG/Spotify_Logo_RGB_Black.png);
+}
+
+#apple-music-logo {
+    background-image: url(/images/logos/apple-music/US_UK/Listen_on/Apple_Music_Lockup_Solid/All-black_lockup/SVG/US-UK_Apple_Music_Listen_on_Lockup_all-blk_100617.svg);
+}
+
+#itunes-logo {
+    background-image: url(/images/logos/itunes/US_UK/iTunes_Store_Solid_Lockup/All_Black_Lockup/Get_it_on/SVG/US_UK_iTunes_Store_Get_Solid_Lockup_RGB_blk_012618.svg);
+}
+
+#deezer-logo {
+    background-image: url(/images/logos/deezer/Logotype/DIGITAL_RGB/PNG/Mono_Full_Black@2x.png);
+    padding: calc(var(--border-distance) / 4);
+}
+
+#genius-logo {
+    background-image: url(/images/logos/genius/Geniusicon.jpg);
+}
+
+#amazon-music-logo {
+    background-image: url(/images/logos/amazon-music/amazonmusicunlimitedbig.png);
+}
+
+#napster-logo {
+    background-image: url(/images/logos/napster/2016-napster-logos/png/Napster-black-horz-logo.png)
+}
+
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: calc(var(--border-distance) / 8);
+    width: 100%;
+    color: var(--cream-white);
+    box-sizing: border-box;
+    font-size: calc(var(--border-distance) / 3);
+    text-align: center;
+    border-top: 2px double var(--cream-white);
+    border-bottom: 2px double var(--cream-white);
+}
+
+footer ul .item{
+    font-family: opti-jake-osf;
+    cursor: pointer;
+}
+
+#contact{
+    font-family: ubuntu-regular;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
+
+#contact h1{
+    color: black;
+}
+
+#contact form{
+    padding-bottom: calc(var(--border-distance) / 2);
+}
+
+#contact form input, form textarea{
+    display: block;
+    font-family: inherit;
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin-bottom: calc(var(--border-distance)/4);
+
+}
+
+#contact form input[type=text], form textarea{
+    width: 100%;
+    font-size: calc(var(--border-distance)/3);
+    padding: calc(var(--border-distance) / 8);
+}
+
+#contact form textarea{
+    height: calc(3 * var(--border-distance));
+    resize: vertical;
+}
+
+#contact form input[type=image]{
+    margin: auto;
+    height: var(--border-distance);
+    cursor: pointer;
+    padding: calc(var(--border-distance) / 8);
+    font-size: calc(var(--border-distance) / 2);
+}
+
+#contact-box{
+    margin-bottom: calc(2 * var(--border-distance));
+    height: 100%;
+    box-sizing: border-box;
+    padding: calc(var(--border-distance) / 2) calc(var(--border-distance) / 2) 0 calc(var(--border-distance) / 2);
+    background-color: var(--cream-white);
+    border: 2px solid black;
+}
+
+#press{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: calc(2 * var(--border-distance));
+}
+
+.download-btn{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-origin: content-box;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+
+.download-btn a img, #text-dl a img{
+    background-color: var(--cream-white);
+    display: block;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#in-action-prev{
+    background-image: url(/downloads/InAction/LeanderInAction1.JPG);
+}
+
+#portraits-prev{
+    background-image: url(/downloads/Portraits/ProfileHeaderSpotify.JPG);
+}
+
+#spotify-prev{
+    background-image: url(/downloads/Spotify/LeanderMachanSpotifyArtistProfile.JPG);
+
+}
+
+#pics-dl{
+    display: grid;
+    grid-template-columns: calc(4 * var(--border-distance)) calc(4 * var(--border-distance)) calc(4 * var(--border-distance));
+    grid-template-rows: calc(3 * var(--border-distance));
+    grid-row-gap: calc((1 / 3) * var(--border-distance));
+    grid-column-gap: calc((1 / 2) * var(--border-distance));
+    margin-bottom: var(--border-distance);
+}
+
+.subtitle{
+    padding-top: calc(var(--border-distance) / 8);
+    display: block;
+    text-align: center;
+    font-size: calc(var(--border-distance) / 3);
+}
+
+#text-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(3 * var(--border-distance));
+    background-image: url(/downloads/PRInformation/ThumbnailPR.png);
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
