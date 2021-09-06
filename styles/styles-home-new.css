@@ -113,6 +113,7 @@ h1 {
     display: none;
 }
 
+
 .header ul{
     font-size: 0;
 }
@@ -180,6 +181,7 @@ span.avoidwrap {
     cursor: pointer;
 }
 
+
 #content-footer-wrapper{
     display: flex;
     min-height: calc(100vh - var(--border-distance));
@@ -195,6 +197,10 @@ span.avoidwrap {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#content > div{
+    padding-bottom: calc(2 * var(--border-distance));
 }
 
 
@@ -292,9 +298,7 @@ span.avoidwrap {
         color: #232323;
         transition: color 0.3s ease;
     }
-    #menuToggle a:hover {
-        color: tomato;
-    }
+
     #menuToggle input {
         display: block;
         width: 33px;
@@ -359,10 +363,17 @@ span.avoidwrap {
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
     #menu li {
-        padding: 10px 0;
-        font-size: 22px;
+        padding-bottom: calc(2/5 * var(--border-distance));
+        font-size: calc(4/5 * var(--border-distance));
         font-family: opti-jake-osf;
     }
+
+    #menu li img{
+        height: calc(4/5 * var(--border-distance));
+    }
+
+
+
 
     #menuToggle input:checked~ul {
         transform: none;
@@ -374,9 +385,9 @@ span.avoidwrap {
 
 }
 
-@media screen and (max-width: 860px ) and (min-aspect-ratio: 11/10){
+@media screen and (max-width: 860px ){
     :root {
-        --border-distance: 3rem;
+        --border-distance: 3.5rem;
     }
     .header-icon {
         height: calc(var(--border-distance) / 1.5) !important;
@@ -385,7 +396,7 @@ span.avoidwrap {
 
 @media (max-width: 600px) {
     :root {
-        --border-distance: 3rem;
+        --border-distance: 3.5rem;
     }
 
     .header-icon {
@@ -422,7 +433,6 @@ span.avoidwrap {
 }
 
 #music {
-    padding-bottom: calc(var(--border-distance)/2);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -499,4 +509,66 @@ span.avoidwrap {
 
 #genius-logo {
     background-image: url(/images/third-party/logos/genius/GeniusLogo.png);
+}
+
+
+#download-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.preview-box{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    margin: calc(var(--border-distance)/4) calc(var(--border-distance)/2) calc(var(--border-distance)/4) calc(var(--border-distance)/2);
+    width: calc(3 * var(--border-distance));
+    height: calc(4 * var(--border-distance));
+}
+
+.download-prev{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.download-prev a{
+    margin: auto;
+}
+
+.download-prev a img{
+    background-color: var(--cream-white);
+    display: block;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.subtitle{
+    font-family: ubuntu-regular;
+    font-size: calc(var(--border-distance)/3);
+    text-align: center;
+    padding-bottom: calc(var(--border-distance)/6);
+}
+
+#in-action-prev{
+    background-image: url(/downloads/previews/InActionPrev.JPG);
+}
+
+#portraits-prev{
+    background-image: url(/downloads/previews/PortraitPrev.JPG);
+}
+
+#spotify-prev{
+    background-image: url(/downloads/previews/SpotifyPrev.JPG);
+}
+
+#pr-prev{
+    background-image: url(/downloads/previews/PRPrev.JPG);
 }
