@@ -51,8 +51,8 @@ h1 {
     width: 100%;
     opacity: 1;
     transition: opacity 1s;
-    background-image: linear-gradient(var(--light-blue-bg), var(--dark-blue-bg));
     background-attachment: fixed;
+    background-image: linear-gradient(var(--red-main), var(--light-blue-bg), var(--dark-blue-bg));
 }
 
 #top {
@@ -571,4 +571,56 @@ span.avoidwrap {
 
 #pr-prev{
     background-image: url(/downloads/previews/PRPrev.JPG);
+}
+
+#contact{
+    font-family: ubuntu-regular;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
+
+#contact h1{
+    color: black;
+}
+
+#contact form{
+    padding-bottom: calc(var(--border-distance) / 2);
+}
+
+#contact form input, form textarea{
+    display: block;
+    font-family: inherit;
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin-bottom: calc(var(--border-distance)/4);
+
+}
+
+#contact form input[type=text], form textarea{
+    width: 100%;
+    font-size: calc(var(--border-distance)/3);
+    padding: calc(var(--border-distance) / 8);
+}
+
+#contact form textarea{
+    height: calc(3 * var(--border-distance));
+    resize: vertical;
+}
+
+#contact form input[type=image]{
+    margin: auto;
+    height: var(--border-distance);
+    cursor: pointer;
+    padding: calc(var(--border-distance) / 8);
+    font-size: calc(var(--border-distance) / 2);
+}
+
+#contact-box{
+    height: 100%;
+    box-sizing: border-box;
+    padding: calc(var(--border-distance) / 2) calc(var(--border-distance) / 2) 0 calc(var(--border-distance) / 2);
+    background-color: var(--cream-white);
+    border: 2px solid black;
 }
