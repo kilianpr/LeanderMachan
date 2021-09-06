@@ -14,14 +14,16 @@
     <div id="top">
         <div id="header-wrapper">
             <div id="menuToggle">
-                <input id="checkbox" type="checkbox" />
+                <input class="clickable" id="checkbox" type="checkbox" />
                 <span></span>
                 <span></span>
                 <span></span>
                 <ul id="menu">
-                    <li class="active"><a href=/home.html#music>Music</a></li>
-                    <li class="active"><a href=/home.html#press>Press</a></li>
-                    <li class="active"><a href=/home.html#contact>Contact</a></li>
+                    <li><img class="clickable" id="back" src="images/icons/other/arrow-left-circle.svg"
+                        onclick="transitionToPage('/index.html')"></li>
+                    <li><a href=/home.html#music>Music</a></li>
+                    <li><a href=/home.html#press>Press</a></li>
+                    <li><a href=/home.html#contact>Contact</a></li>
                 </ul>
             </div>
 
@@ -36,25 +38,25 @@
             <nav class="header navigation">
                 <ul>
                     <!--<li class="active"><a href=/#videos>VIDEOS</a></li>-->
-                    <li class="active"><a href=/home.html#music>MUSIC</a></li>
+                    <li class="clickable"><a href=/home.html#music>MUSIC</a></li>
                     <span>&middot;</span>
-                    <li class="active"><a href=/home.html#press>PRESS</a></li>
+                    <li class="clickable"><a href=/home.html#press>PRESS</a></li>
                     <span>&middot;</span>
-                    <li class="active"><a href=/home.html#contact>CONTACT</a></li>
+                    <li class="clickable"><a href=/home.html#contact>CONTACT</a></li>
                 </ul>
             </nav>
 
             <nav class="header right header-icons">
                 <ul>
                     <li><a href="https://open.spotify.com/artist/0KjiuZF0axLQjOKHq15P8f?si=K_OYCjcSTPO2MSQ3SItyGw&dl_branch=1"
-                            target="_blank"><img class="header-icon" id="spotify"
+                            target="_blank"><img class="clickable header-icon" id="spotify"
                                 src="images/third-party/icons/spotify/Spotify_Icon_RGB_Black.png"></a>
                     </li>
                     <li><a href="https://music.apple.com/de/artist/leander-machan/1576315117"
-                            target="_blank"><img class="header-icon" id="apple-music"
+                            target="_blank"><img class="clickable header-icon" id="apple-music"
                                 src="images/third-party/icons/apple-music/Apple_Music_Icon_blk_sm_073120.svg"></a>
                     </li>
-                    <li><a href=https://www.instagram.com/leander.machan target="_blank"><img class="header-icon"
+                    <li><a href=https://www.instagram.com/leander.machan target="_blank"><img class="clickable header-icon"
                                 id="instagram" src="images/third-party/icons/instagram/glyph-logo_May2016.png"></a></li>
                 </ul>
             </nav>
@@ -80,13 +82,38 @@
 
     <div id="content-footer-wrapper">
         <div id="content">
-            
+            <div id="music">
+                <h1><span class="avoidwrap">DEBUT SINGLE "LATER"</span> <span class="avoidwrap">OUT NOW!</span></h1>
+                <div id="album-logo-wrapper">
+                    <div id="album-cover">
+                        <div>
+                            <img src="images/banner/Later_albumcover.jpg">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <div class="logo-wrapper">
+                            <a class="clickable button-bg" id="spotify-logo"
+                                href="http://open.spotify.com/album/790HxuhFpJKbh1Uln8AxMg" 
+                                target="_blank">Spotify</a>
+                            <a class="clickable button-bg" id="apple-music-logo"
+                                href="https://music.apple.com/de/album/later-feat-milan-grafweg-single/1576315116"
+                                target="_blank">Apple Music</a>
+                            <a class="clickable button-bg" id="deezer-logo" 
+                                href="https://www.deezer.com/album/243970912"
+                                target="_blank">Deezer</a>
+                            <a class="clickable button-bg" id="genius-logo" 
+                                href="https://genius.com/Leander-machan-later-lyrics"
+                                target="_blank">Genius</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="home-footer">
             <ul>
-                <span class="item" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
+                <span class="clickable item" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
                 <span>&middot;</span>
-                <span class="item" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
+                <span class="clickable item" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
             </ul>
         </div>
     </div>
