@@ -53,7 +53,7 @@ p {
 #home-body{
     height: 100%;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 1s;
     background-attachment: fixed;
     background-image: linear-gradient(var(--red-main), var(--light-blue-bg), var(--dark-blue-bg));
@@ -68,6 +68,7 @@ p {
     text-align: center;
     line-height: var(--border-distance);
 }
+
 
 #header-wrapper{
     margin: 0 auto 0 auto;
@@ -133,13 +134,13 @@ p {
     text-decoration: none;
     font-family: opti-jake-osf;
     color: black;
-    font-size: calc(var(--border-distance) / 1.5);
+    font-size: calc(var(--border-distance) * 0.6);
 }
 
 .header ul span{
     display: inline-block;
     width: calc(var(--border-distance) / 8);
-    font-size: calc(var(--border-distance) / 1.5);
+    font-size: calc(var(--border-distance) * 0.6);
 }
 
 .header-icon {
@@ -208,7 +209,7 @@ span.avoidwrap {
 }
 
 #content h1{
-    padding-top: calc(1 * var(--border-distance));;
+    padding-top: 10vw;
 }
 
 

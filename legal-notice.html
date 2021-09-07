@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="beginning" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
     <meta name="msapplication-square150x150logo" content="images/icons/favicomatic/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="images/icons/favicomatic/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="images/icons/favicomatic/mstile-310x310.png" />
-    <script type="text/javascript" src="scripts/form.js"></script>
+    <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 
 <body id="home-body">
@@ -41,16 +41,16 @@
                 <ul id="menu">
                     <li><img class="clickable" id="back" src="images/icons/other/arrow-left-circle.svg"
                         onclick="transitionToPage('/index.html')"></li>
-                    <li><a href=/home.html#music>MUSIC</a></li>
-                    <li><a href=/home.html#press>PRESS</a></li>
-                    <li><a href=/home.html#contact>CONTACT</a></li>
+                    <li><a class="remove-hash" href=/home.html#music>MUSIC</a></li>
+                    <li><a class="remove-hash" href=/home.html#press>PRESS</a></li>
+                    <li><a class="remove-hash" href=/home.html#contact>CONTACT</a></li>
                 </ul>
             </div>
 
             <nav class="header left header-icons">
                 <ul>
-                    <li><img class="header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
-                            onclick="transitionToPage('/index.html')"></li>
+                    <li><img class="clickable header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
+                            onclick="transitionToPage('/home.html')"></li>
                     <!--https://feathericons.com/?query=arrow-->
                 </ul>
             </nav>
@@ -58,11 +58,11 @@
             <nav class="header navigation">
                 <ul>
                     <!--<li class="active"><a href=/#videos>VIDEOS</a></li>-->
-                    <li class="clickable"><a href=/home.html#music>MUSIC</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#music>MUSIC</a></li>
                     <span>&middot;</span>
-                    <li class="clickable"><a href=/home.html#press>PRESS</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#press>PRESS</a></li>
                     <span>&middot;</span>
-                    <li class="clickable"><a href=/home.html#contact>CONTACT</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#contact>CONTACT</a></li>
                 </ul>
             </nav>
 
@@ -85,7 +85,7 @@
     <div id="left"></div>
     <div id="right"></div>
     <div id="bottom">
-        <a href=/home.html#top>
+        <a class="remove-hash" href=/home.html#beginning>
             <img src="images/banner/leander-machan-lettering.png">
         </a>
     </div>

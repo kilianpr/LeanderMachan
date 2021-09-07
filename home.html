@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="beginning" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -30,6 +30,7 @@
     <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 
+
 <body id="home-body">
     <div id="top">
         <div id="header-wrapper">
@@ -49,7 +50,7 @@
 
             <nav class="header left header-icons">
                 <ul>
-                    <li><img class="header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
+                    <li><img class="clickable header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
                             onclick="transitionToPage('/index.html')"></li>
                     <!--https://feathericons.com/?query=arrow-->
                 </ul>
@@ -85,7 +86,7 @@
     <div id="left"></div>
     <div id="right"></div>
     <div id="bottom">
-        <a href=/home.html#top>
+        <a class="remove-hash" href=/home.html#beginning>
             <img src="images/banner/leander-machan-lettering.png">
         </a>
     </div>
@@ -175,7 +176,7 @@
             <div id="contact">
                 <h1>CONTACT ME!</h1>
                 <div id="contact-box">
-                    <form>
+                    <form onsubmit="return false;">
                         <input type="text" id="name" name="name" placeholder="Your name">
                         <input type="text" id="subject" name="subject" placeholder="Your subject">
                         <textarea id="mail-content" name="mail-content"

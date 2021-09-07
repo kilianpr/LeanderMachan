@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="Beginning" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
     <meta name="msapplication-square150x150logo" content="images/icons/favicomatic/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="images/icons/favicomatic/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="images/icons/favicomatic/mstile-310x310.png" />
-    <script type="text/javascript" src="scripts/form.js"></script>
+    <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 
 <body id="home-body">
@@ -49,8 +49,8 @@
 
             <nav class="header left header-icons">
                 <ul>
-                    <li><img class="header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
-                            onclick="transitionToPage('/index.html')"></li>
+                    <li><img class="clickable header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
+                            onclick="transitionToPage('/home.html')"></li>
                     <!--https://feathericons.com/?query=arrow-->
                 </ul>
             </nav>
@@ -58,25 +58,25 @@
             <nav class="header navigation">
                 <ul>
                     <!--<li class="active"><a href=/#videos>VIDEOS</a></li>-->
-                    <li class="clickable"><a href=/home.html#music>MUSIC</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#music>MUSIC</a></li>
                     <span>&middot;</span>
-                    <li class="clickable"><a href=/home.html#press>PRESS</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#press>PRESS</a></li>
                     <span>&middot;</span>
-                    <li class="clickable"><a href=/home.html#contact>CONTACT</a></li>
+                    <li class="clickable"><a class="remove-hash" href=/home.html#contact>CONTACT</a></li>
                 </ul>
             </nav>
 
             <nav class="header right header-icons">
                 <ul>
-                    <li><a href="https://open.spotify.com/artist/0KjiuZF0axLQjOKHq15P8f?si=K_OYCjcSTPO2MSQ3SItyGw&dl_branch=1"
+                    <li><a class="remove-hash" href="https://open.spotify.com/artist/0KjiuZF0axLQjOKHq15P8f?si=K_OYCjcSTPO2MSQ3SItyGw&dl_branch=1"
                             target="_blank"><img class="clickable header-icon" id="spotify"
                                 src="images/third-party/icons/spotify/Spotify_Icon_RGB_Black.png"></a>
                     </li>
-                    <li><a href="https://music.apple.com/de/artist/leander-machan/1576315117"
+                    <li><a class="remove-hash" href="https://music.apple.com/de/artist/leander-machan/1576315117"
                             target="_blank"><img class="clickable header-icon" id="apple-music"
                                 src="images/third-party/icons/apple-music/Apple_Music_Icon_blk_sm_073120.svg"></a>
                     </li>
-                    <li><a href=https://www.instagram.com/leander.machan target="_blank"><img class="clickable header-icon"
+                    <li><a class="remove-hash" href=https://www.instagram.com/leander.machan target="_blank"><img class="clickable header-icon"
                                 id="instagram" src="images/third-party/icons/instagram/glyph-logo_May2016.png"></a></li>
                 </ul>
             </nav>
@@ -85,7 +85,7 @@
     <div id="left"></div>
     <div id="right"></div>
     <div id="bottom">
-        <a href=/home.html#top>
+        <a class="remove-hash" href=/home.html#beginning>
             <img src="images/banner/leander-machan-lettering.png">
         </a>
     </div>
