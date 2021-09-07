@@ -625,8 +625,8 @@ span.avoidwrap {
     font-family: ubuntu-regular;
     font-size: calc(var(--border-distance) / 3);
     border: 2px solid black;
-    width: 80%;
-    padding: 5vw !important;
+    width: 75%;
+    padding: 3vw !important;
     margin-top: var(--border-distance);
     margin-bottom: calc(var(--border-distance)*2);
     max-width: 1300px;
@@ -639,4 +639,8 @@ span.avoidwrap {
 .white-textbox h4{
     padding-top: calc(var(--border-distance) / 3);
     padding-bottom: calc(var(--border-distance) / 12);
+}
+
+.white-textbox a{
+    color: var(--blue-main);
 }
