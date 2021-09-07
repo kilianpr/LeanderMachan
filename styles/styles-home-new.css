@@ -204,7 +204,11 @@ span.avoidwrap {
 }
 
 #content > div{
-    padding-bottom: calc(4 * var(--border-distance));
+    padding-bottom: calc(3 * var(--border-distance));
+}
+
+#content h1{
+    padding-top: calc(1 * var(--border-distance));;
 }
 
 
