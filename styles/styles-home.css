@@ -1,249 +1,83 @@
-
-@media (max-width: 1400px) {
-    :root {
-        --border-distance: 5rem;
-    }
-    #home-body h1 {
-        font-size: 4vw !important;
-    }
-}
-
-/*This is where the hamburger starts displaying*/
-@media (max-width: 1000px) {
-    .album-logo-wrapper>div {
-        flex: 1 0 100% !important;
-        justify-content: center !important;
-    }
-    #album-cover {
-        margin: 0 0 calc(var(--border-distance) / 2) 0 !important;
-    }
-    .table-wrapper {
-        margin: calc(var(--border-distance) / 2) auto 0 auto !important;
-    }
-    #contact{
-        width: 70% !important;
-    }
-
-    #menuToggle {
-        display: block !important;
-        top: 50px;
-        left: 50px;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-    #menuToggle a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-    }
-    #menuToggle a:hover {
-        color: tomato;
-    }
-    #menuToggle input {
-        display: block;
-        width: 43px;
-        height: calc(var(--border-distance) * (3/5));
-        position: absolute;
-        top: 10px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        /* hide this */
-        z-index: 2;
-        /* and place it over the hamburger */
-        -webkit-touch-callout: none;
-    }
-    /*
- * Just a quick hamburger
- */
-    #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 2px;
-        margin-top: 0px;
-        margin-bottom: 5px;
-        position: relative;
-        background: black;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.3s cubic-bezier(.6,-0.28,.74,.05), 
-                    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
-                    opacity 0.35s ease;
-
-    }
-    #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-    }
-    #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-        margin-bottom: 0px;
-    }
-    /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-    #menuToggle input:checked~span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-0.3px, 0px);
-        background: #232323;
-    }
-    /*
- * But let's hide the middle one.
- */
-    #menuToggle input:checked~span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-    /*
- * Ohyeah and the last one should go the other direction
- */
-    #menuToggle input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(-3px, 5px);
-    }
-    /*
- * Make this absolute positioned
- * at the top left of the screen
- */
-    #menu {
-        position: absolute;
-        width: 100%;
-        margin: -110px 0 0 0;
-        padding: 125px 0px 20px 2px;
-        box-sizing: border-box;
-        background: rgba(253, 249, 246, 0.9);
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        /* to stop flickering of text in safari */
-        transform-origin: 0% 0%;
-        transform: translate(0, -100%);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    }
-    #menu li {
-        padding: 10px 0;
-        font-size: 22px;
-        font-family: opti-jake-osf;
-    }
-    /*
- * And let's slide it in from the left
- */
-    #menuToggle input:checked~ul {
-        transform: none;
-    }
-
-    .left-header-icons, .navigation{
-        display: none !important;
-    }
-
-}
-
-@media (max-width: 800px){
-    #pics-dl{
-        grid-template-columns: 20vw 20vw 20vw !important;
-        grid-template-rows: 15vw!important;
-    }
-}
-
-
-@media (max-width: 600px) {
-    :root {
-        --border-distance: 4rem;
-    }
-    #home-body h1 {
-        font-size: 2.5rem !important;
-    }
-    #album-cover div {
-        width: calc(7 * var(--border-distance)) !important;
-    }
-    .logo-wrapper {
-        grid-template-columns: calc(3.5 * var(--border-distance)) calc(3.5 * var(--border-distance)) !important;
-    }
-
-    .header-icon {
-        height: 2.5rem !important;
-    }
-    #contact{
-        width: 85% !important;
-    }
-}
-
-
-
-
-
-
-
-@media (max-width: 600px) and (min-aspect-ratio: 6/10){
-    #banner{
-        height: calc(100vh - 2 * var(--border-distance));
-        overflow: hidden;
-    }
-}
-
-@media (max-width: 600px) and (min-aspect-ratio: 17/25){
-    #banner-img{
-        margin-top: -50px;
-    }
-}
-
-@media (max-width: 400px) {
-    :root {
-        --border-distance: 3rem;
-    }
-
-    .header-icon {
-        height: calc(var(--border-distance) / 1.5) !important;
-    }
-
-    #menuToggle input{
-        width: 28.66px;
-        top: 6.66px;
-        left: -3.33px;
-    }
-
-    #menuToggle span{
-        width: 22px;
-        height: 1.33px;
-        margin-bottom: 3.33px;
-    }
-
-    #menuToggle input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(-1.5px, 3px);
-    }
-
-}
-
-#menuToggle{
-    display: none;
-}
-
 html {
+    height: 100%;
     scroll-behavior: smooth;
     font-size: 62.5%;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
 }
 
-body {
+:root {
+    --light-blue-bg: #008db5;
+    --dark-blue-bg: #003543;
+    --red-main: #85222c;
+    --blue-main: #005b6c;
+    --cream-white: #fdf9f6;
+    --border-distance: 5rem;
+}
+
+@font-face {
+    font-family: 'opti-jake-osf';
+    src: URL('/fonts/opti-jake-osf.otf') format('opentype');
+}
+@font-face {
+    font-family: 'itc-grouch';
+    src: url('/fonts/itc-grouch.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('/fonts/ubuntu-regular.ttf') format('truetype');
+
+}
+@font-face {
+    font-family: 'digital-dream';
+    src: URL('/fonts/digital-dream.regular.ttf') format('truetype');
+    /* https://www.1001fonts.com/digital-dream-font.html#license */
+}
+
+h1 {
+    color: var(--cream-white);
+    font-size: var(--border-distance);
+    padding-bottom: calc(var(--border-distance) / 2);
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1em;
+  }
+  
+
+#home-body{
     height: 100%;
     width: 100%;
     opacity: 0;
     transition: opacity 1s;
-    background-image: linear-gradient(var(--light-blue-bg), var(--dark-blue-bg));
     background-attachment: fixed;
+    background-image: linear-gradient(var(--red-main), var(--light-blue-bg), var(--dark-blue-bg));
 }
 
-.hidden {
-    visibility: hidden;
+#top {
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--border-distance);
+    z-index: 999;
+    text-align: center;
+    line-height: var(--border-distance);
 }
 
-span.avoidwrap {
-    display: inline-block;
+
+#header-wrapper{
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - (2 * var(--border-distance)));
+    height:100%;
 }
 
-#bottom, #left, #right {
-    background: var(--cream-white);
-    position: fixed;
-}
 
 #left, #right {
     top: 0;
@@ -270,29 +104,48 @@ span.avoidwrap {
     line-height: var(--border-distance);
 }
 
+#bottom, #left, #right, #top {
+    background: var(--cream-white);
+    position: fixed;
+}
+
 #bottom a img {
     height: calc(var(--border-distance) * (3 / 4));
     padding: calc(var(--border-distance) / 8);
 }
 
-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: calc(100% - 2 * var(--border-distance));
-    height: var(--border-distance);
-    z-index: 9999;
-    background-color: var(--cream-white);
+#menuToggle{
+    display: none;
+}
+
+
+.header ul{
+    font-size: 0;
+}
+
+.header ul li{
+    padding-left: calc(var(--border-distance) / 4);
+    padding-right: calc(var(--border-distance) / 4);
+    list-style: none;
+    display: inline-block;
+}
+
+.header ul li a{
+    text-decoration: none;
+    font-family: opti-jake-osf;
+    color: black;
+    font-size: calc(var(--border-distance) * 0.6);
+}
+
+.header ul span{
+    display: inline-block;
+    width: calc(var(--border-distance) / 8);
+    font-size: calc(var(--border-distance) * 0.6);
 }
 
 .header-icon {
-    height: calc(var(--border-distance) / 2);
+    height: calc(var(--border-distance) / 1.5);
     display: block;
-    cursor: pointer;
 }
 
 .navigation {
@@ -300,118 +153,293 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    line-height: normal;
 }
 
-.left-header-icons {
+
+.header-icons {
     flex: 1;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-}
-
-.right-header-icons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav ul {
     font-size: 0;
+    line-height: normal;
 }
 
-nav ul span{
+.left{
+    justify-content: flex-start;
+}
+
+.right{
+    justify-content: flex-end;
+}
+
+span.avoidwrap {
     display: inline-block;
-    width: calc(var(--border-distance) / 8);
-    font-size: calc(var(--border-distance) / 2);
 }
 
-nav ul li {
-    padding-left: calc(var(--border-distance) / 4);
-    padding-right: calc(var(--border-distance) / 4);
-    list-style: none;
-    display: inline-block;
+.hidden {
+    visibility: hidden;
 }
 
-nav ul li a {
-    text-decoration: none;
+.clickable {
+    cursor: pointer;
+}
+
+
+#content-footer-wrapper{
+    display: flex;
+    min-height: calc(100vh - var(--border-distance));
+    width: calc(100% - 2 * var(--border-distance));
+    flex-direction: column;
+    position: relative;
+    top: var(--border-distance);
+    left: var(--border-distance);
+    justify-content: space-between;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content > div{
+    padding-bottom: calc(3 * var(--border-distance));
+}
+
+#content h1{
+    padding-top: 10vw;
+}
+
+
+#home-footer{
+    width: 100%;
+    color: var(--cream-white);
+    box-sizing: border-box;
+    font-size: calc(var(--border-distance) / 3);
+    text-align: center;
+    border-top: 2px double var(--cream-white);
+    border-bottom: 2px double var(--cream-white);
+    margin-bottom: calc(1.25 * var(--border-distance));
+}
+
+
+#home-footer ul .item{
     font-family: opti-jake-osf;
-    color: black;
-    font-size: calc(var(--border-distance) / 2);
 }
 
-@media (min-aspect-ratio: 10/6) {
-    #banner{
+@media(min-aspect-ratio: 1500/835){
+    #banner-img{
+        margin-top: -25px !important;
+    }
+}
+
+@media (max-aspect-ratio: 4000/2410) {
+    #banner-img { /*Keeps the banner image on fullscreen when the viewport becomes narrower*/
         height: calc(100vh - 2 * var(--border-distance));
-        overflow: hidden;
+        width: auto !important;
+    }
+}
+@media (max-aspect-ratio: 4000/2460) {
+    #banner-img{ /*Keeps the banner image in the center when the viewport becomes narrower*/
+        margin-left: calc(0px - ((16/9 * (100vh - 2 * var(--border-distance)) - 100%))/2) !important;
+        margin-right: 0 !important;
     }
 }
 
-@media (min-aspect-ratio: 17/9) {
-    #banner-img {
-        margin-top: -20px;
+@media (max-aspect-ratio: 1000/858) {
+    #banner-img{
+        margin: auto !important;
+        width: calc(100% - 2 * var(--border-distance)) !important;    
+        height: auto !important;
     }
+}
+
+@media (max-aspect-ratio: 450/735) {
+    #banner-img{
+        height: calc(100vh - 2 * var(--border-distance)) !important;
+        width: auto !important;
+    }
+}
+
+@media (max-aspect-ratio: 450/853) {
+    #banner-img{
+        height: auto !important;
+        width: calc(100% - 2 * var(--border-distance)) !important;
+    }
+}
+
+@media (max-width: 1400px) {
+    #home-body h1 {
+        font-size: 4vw !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    #album-logo-wrapper>div {
+        flex: 1 0 100% !important;
+        justify-content: center !important;
+    }
+    #album-cover {
+        margin: 0 0 calc(var(--border-distance) / 2) 0 !important;
+    }
+    .table-wrapper {
+        margin: calc(var(--border-distance) / 2) auto 0 auto !important;
+    }
+    #contact{
+        width: 70% !important;
+    }
+
+    #menuToggle {
+        display: block !important;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+        height: 50%;
+        margin: auto;
+    }
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 33px;
+        height: 80%;
+        margin-top: -3px;
+        position: absolute;
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 2px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.3s cubic-bezier(.6,-0.28,.74,.05), 
+                    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
+                    opacity 0.35s ease;
+
+    }
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+        margin-bottom: 0px;
+    }
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-0.3px, 0px);
+        background: #232323;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(-3px, 5px);
+    }
+
+    #menu {
+        position: absolute;
+        width: calc(100% - 2 * var(--border-distance));
+        margin: -110px 0 0 0;
+        padding: 125px 0px 0px 0px;
+        box-sizing: border-box;
+        background: rgba(253, 249, 246, 0.9);
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(0, -100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+    #menu li {
+        padding-bottom: calc(2/5 * var(--border-distance));
+        font-size: calc(4/5 * var(--border-distance));
+        font-family: opti-jake-osf;
+    }
+
+    #menu li img{
+        height: calc(4/5 * var(--border-distance));
+    }
+
+
+
+
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+
+    .left, .navigation{
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: 1000px ){
+    :root {
+        --border-distance: 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --border-distance: 3rem;
+    }
+
+    .header-icon {
+        height: calc(var(--border-distance) / 1.5) !important;
+    }
+
+    #home-body h1 {
+        font-size: 2.5rem !important;
+    }
+    #album-cover div {
+        width: calc(7 * var(--border-distance)) !important;
+    }
+
+    #contact{
+        width: 85% !important;
+    }
+}
+
+
+#banner {
+    margin-top: var(--border-distance);
+    overflow: hidden;
+    height: calc(100vh - 2 * var(--border-distance));
 }
 
 #banner-img {
-    width: calc(100vw - 2 * var(--border-distance));    
+    width: calc(100% - 2 * var(--border-distance));    
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#content {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: var(--border-distance);
-    margin-right: auto;
-    margin-left: auto;
-    width: calc(100% - 2 * var(--border-distance));
-    background-image: linear-gradient(var(--light-blue-bg), var(--dark-blue-bg));
-    background-attachment: fixed;
-    min-height: calc(100vh - 2 * var(--border-distance));
-    position: relative;
-}
-
-/* This element defines the size the iframe will take.
-   In this example we want to have a ratio of 25:14 
-
-#videos {
-    display: none;
-    position: relative;
-    width: 75%;
-    height: 0;
-    margin: 0rem auto;
-    padding-bottom: 42.19%;
-}
-
-Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent
-
-#videos iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}*/
-
 #music {
-    padding-top: calc(2 * var(--border-distance));
-    padding-bottom: calc(2 * var(--border-distance));
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
 
-h1 {
-    color: var(--cream-white);
-    font-size: var(--border-distance);
-    padding-bottom: calc(var(--border-distance) / 2);
-    text-align: center;
-}
-
-.album-logo-wrapper {
+#album-logo-wrapper {
     display: flex;
     flex-wrap: wrap;
 }
@@ -428,7 +456,7 @@ h1 {
     width: calc(8 * var(--border-distance))
 }
 
-#album-cover div img {
+#album-cover div img{
     width: 100%;
 }
 
@@ -443,7 +471,7 @@ h1 {
 .logo-wrapper {
     display: grid;
     grid-template-columns: calc(4 * var(--border-distance)) calc(4 * var(--border-distance));
-    grid-template-rows: var(--border-distance) var(--border-distance);
+    grid-template-rows: calc(1.5 * var(--border-distance)) calc(1.5 * var(--border-distance));
     grid-row-gap: calc((1 / 3) * var(--border-distance));
     grid-column-gap: calc((1 / 2) * var(--border-distance));
 }
@@ -455,9 +483,8 @@ h1 {
     background-origin: content-box;
     background-color: var(--cream-white);
     border: 2px solid black;
-    cursor: pointer;
     box-sizing: border-box;
-    padding: calc(var(--border-distance) / 6);
+    padding: calc(var(--border-distance) / 3);
     font-size: 2rem;
 }
 
@@ -468,65 +495,91 @@ h1 {
 }
 
 #spotify-logo {
-    background-image: url(/images/logos/spotify/01_RGB/02_PNG/Spotify_Logo_RGB_Black.png);
+    background-image: url(/images/third-party/logos/spotify/Spotify_Logo_RGB_Black.png);
 }
 
 #apple-music-logo {
-    background-image: url(/images/logos/apple-music/US_UK/Listen_on/Apple_Music_Lockup_Solid/All-black_lockup/SVG/US-UK_Apple_Music_Listen_on_Lockup_all-blk_100617.svg);
-}
-
-#itunes-logo {
-    background-image: url(/images/logos/itunes/US_UK/iTunes_Store_Solid_Lockup/All_Black_Lockup/Get_it_on/SVG/US_UK_iTunes_Store_Get_Solid_Lockup_RGB_blk_012618.svg);
+    background-image: url(/images/third-party/logos/apple-music/US-UK_Apple_Music_Listen_on_Lockup_all-blk_100617.svg);
 }
 
 #deezer-logo {
-    background-image: url(/images/logos/deezer/Logotype/DIGITAL_RGB/PNG/Mono_Full_Black@2x.png);
-    padding: calc(var(--border-distance) / 4);
+    background-image: url(/images/third-party/logos/deezer/Mono_Full_Black@2x.png);
 }
 
 #genius-logo {
-    background-image: url(/images/logos/genius/GeniusLogo.png);
-}
-
-#amazon-music-logo {
-    background-image: url(/images/logos/amazon-music/amazonmusicunlimitedbig.png);
-}
-
-#napster-logo {
-    background-image: url(/images/logos/napster/2016-napster-logos/png/Napster-black-horz-logo.png)
+    background-image: url(/images/third-party/logos/genius/GeniusLogo.png);
 }
 
 
-footer{
-    position: absolute;
-    left: 0;
-    bottom: calc(var(--border-distance) / 8);
-    width: 100%;
-    color: var(--cream-white);
+#download-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.preview-box{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    margin: calc(var(--border-distance)/4) calc(var(--border-distance)/2) calc(var(--border-distance)/4) calc(var(--border-distance)/2);
+    width: calc(3 * var(--border-distance));
+    height: calc(4 * var(--border-distance));
+}
+
+.download-prev{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     box-sizing: border-box;
-    font-size: calc(var(--border-distance) / 3);
-    text-align: center;
-    border-top: 2px double var(--cream-white);
-    border-bottom: 2px double var(--cream-white);
+    width: 80%;
+    height: 80%;
+    margin: auto;
 }
 
-footer ul .item{
-    font-family: opti-jake-osf;
-    cursor: pointer;
+.download-prev a{
+    margin: auto;
+}
+
+.download-prev a img{
+    background-color: var(--cream-white);
+    display: block;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.subtitle{
+    font-family: ubuntu-regular;
+    font-size: calc(var(--border-distance)/3);
+    text-align: center;
+    padding-bottom: calc(var(--border-distance)/6);
+}
+
+#in-action-prev{
+    background-image: url(/downloads/previews/InActionPrev.JPG);
+}
+
+#portraits-prev{
+    background-image: url(/downloads/previews/PortraitPrev.JPG);
+}
+
+#spotify-prev{
+    background-image: url(/downloads/previews/SpotifyPrev.JPG);
+}
+
+#pr-prev{
+    background-image: url(/downloads/previews/PRPrev.JPG);
 }
 
 #contact{
-    font-family: ubuntu-regular;
     width: 50%;
     justify-content: center;
     margin: auto;
 }
 
-#contact h1{
-    color: black;
-}
-
 #contact form{
+    font-family: ubuntu-regular;
     padding-bottom: calc(var(--border-distance) / 2);
 }
 
@@ -547,7 +600,7 @@ footer ul .item{
 }
 
 #contact form textarea{
-    height: calc(3 * var(--border-distance));
+    height: calc(2 * var(--border-distance));
     resize: vertical;
 }
 
@@ -560,7 +613,6 @@ footer ul .item{
 }
 
 #contact-box{
-    margin-bottom: calc(2 * var(--border-distance));
     height: 100%;
     box-sizing: border-box;
     padding: calc(var(--border-distance) / 2) calc(var(--border-distance) / 2) 0 calc(var(--border-distance) / 2);
@@ -568,78 +620,27 @@ footer ul .item{
     border: 2px solid black;
 }
 
-#press{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: calc(2 * var(--border-distance));
-}
-
-.download-btn{
-    display: flex;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-origin: content-box;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    width: 100%;
-    height: 100%;
-}
-
-
-.download-btn a img, #text-dl a img{
+.white-textbox{
     background-color: var(--cream-white);
-    display: block;
-    border: 2px solid black;
-    cursor: pointer;
-}
-
-#in-action-prev{
-    background-image: url(/downloads/InAction/LeanderInAction1.JPG);
-}
-
-#portraits-prev{
-    background-image: url(/downloads/Portraits/ProfileHeaderSpotify.JPG);
-}
-
-#spotify-prev{
-    background-image: url(/downloads/Spotify/LeanderMachanSpotifyArtistProfile.JPG);
-}
-
-#pics-dl{
-    display: grid;
-    grid-template-columns: calc(4 * var(--border-distance)) calc(4 * var(--border-distance)) calc(4 * var(--border-distance));
-    grid-template-rows: calc(3 * var(--border-distance));
-    grid-row-gap: calc((1 / 3) * var(--border-distance));
-    grid-column-gap: calc((1 / 2) * var(--border-distance));
-    margin-bottom: var(--border-distance);
-}
-
-.subtitle{
-    padding-top: calc(var(--border-distance) / 8);
-    display: block;
-    text-align: center;
+    font-family: ubuntu-regular;
     font-size: calc(var(--border-distance) / 3);
+    border: 2px solid black;
+    width: 75%;
+    padding: 3vw !important;
+    margin-top: var(--border-distance);
+    margin-bottom: calc(var(--border-distance)*2);
+    max-width: 1300px;
 }
 
-#text-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(3 * var(--border-distance));
-    background-image: url(/downloads/PRInformation/ThumbnailPR.png);
-    background-size: contain;
+.white-textbox h3{
+    padding-bottom: calc(var(--border-distance) / 3);
 }
 
+.white-textbox h4{
+    padding-top: calc(var(--border-distance) / 3);
+    padding-bottom: calc(var(--border-distance) / 12);
+}
 
-
-
-
-
-
-
-
-
+.white-textbox a{
+    color: var(--blue-main);
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-index.css">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/favicomatic/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/favicomatic/apple-touch-icon-72x72.png" />
@@ -32,10 +32,15 @@
 
 <body id="countdown-body">
     <div id="loader"></div>
+    <div id="announcement">
+        <span>Leander live in concert</span>
+        <span>Leander live in concert</span>
+    </div>
     <div id="countdown-wrapper">
-        <div class="neon-text flicker-unregular" id="timer">Countdown</div>
-        <div class="neon-text-light" id="message">Click <br>
-            <span id="wrapper-span"><span class="flicker-regular">-<!---->-></span><span class="green-text" onclick="transitionToPage('/home.html')">here</span><span class="flicker-regular"><--</span><br></span>
+        <div id="in" class="red-text-light">in</div>
+        <div class="red-text flicker-unregular" id="timer">Countdown</div>
+        <div class="red-text-light" id="message">Click <br>
+            <span id="wrapper-span"><span class="flicker-regular">-<!---->-></span><span class="green-text green-hover" onclick="transitionToPage('/home.html')">here</span><span class="flicker-regular"><--</span><br></span>
                 <span>to find out more</span>
         </div>
         <div id="countdown-lettering">
@@ -43,9 +48,9 @@
         </div>
         <footer id="countdown-footer">
             <ul>
-                <span class="item" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
+                <span class="red-text-light red-hover" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
                 <span>&middot;</span>
-                <span class="item" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
+                <span class="red-text-light red-hover" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
             </ul>
         </footer>
     </div>

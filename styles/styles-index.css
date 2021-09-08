@@ -1,4 +1,3 @@
-/*---------------------GENERAL STYLING---------------------*/
 html {
     height: 100%;
   }
@@ -8,14 +7,6 @@ html {
     padding: 0;
 }
 
-:root {
-    --light-blue-bg: #008db5;
-    --dark-blue-bg: #003543;
-    --red-main: #85222c;
-    --blue-main: #005b6c;
-    --cream-white: #fdf9f6;
-    --border-distance: 6rem;
-}
 
 @font-face {
     font-family: 'digital-dream';
@@ -39,190 +30,6 @@ html {
 
 }
 
-
-
-/*---------------------HOME STYLING---------------------*/
-
-@media (max-width: 1400px) {
-    :root {
-        --border-distance: 5rem;
-    }
-    #home-body h1 {
-        font-size: 4vw !important;
-    }
-}
-
-/*This is where the hamburger starts displaying*/
-@media (max-width: 1000px) {
-    .album-logo-wrapper>div {
-        flex: 1 0 100% !important;
-        justify-content: center !important;
-    }
-    #album-cover {
-        margin: 0 0 calc(var(--border-distance) / 2) 0 !important;
-    }
-    .table-wrapper {
-        margin: calc(var(--border-distance) / 2) auto 0 auto !important;
-    }
-    #contact{
-        width: 70% !important;
-    }
-
-    #menuToggle {
-        display: block !important;
-        top: 50px;
-        left: 50px;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-    #menuToggle a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-    }
-    #menuToggle a:hover {
-        color: tomato;
-    }
-    #menuToggle input {
-        display: block;
-        width: 43px;
-        height: calc(var(--border-distance) * (3/5));
-        position: absolute;
-        top: 10px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        /* hide this */
-        z-index: 2;
-        /* and place it over the hamburger */
-        -webkit-touch-callout: none;
-    }
-    /*
- * Just a quick hamburger
- */
-    #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 2px;
-        margin-top: 0px;
-        margin-bottom: 5px;
-        position: relative;
-        background: black;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.3s cubic-bezier(.6,-0.28,.74,.05), 
-                    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
-                    opacity 0.35s ease;
-
-    }
-    #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-    }
-    #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-        margin-bottom: 0px;
-    }
-    /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-    #menuToggle input:checked~span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-0.3px, 0px);
-        background: #232323;
-    }
-    /*
- * But let's hide the middle one.
- */
-    #menuToggle input:checked~span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-    /*
- * Ohyeah and the last one should go the other direction
- */
-    #menuToggle input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(-3px, 5px);
-    }
-    /*
- * Make this absolute positioned
- * at the top left of the screen
- */
-    #menu {
-        position: absolute;
-        width: 100%;
-        margin: -110px 0 0 0;
-        padding: 125px 0px 20px 2px;
-        box-sizing: border-box;
-        background: rgba(253, 249, 246, 0.9);
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        /* to stop flickering of text in safari */
-        transform-origin: 0% 0%;
-        transform: translate(0, -100%);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    }
-    #menu li {
-        padding: 10px 0;
-        font-size: 22px;
-        font-family: opti-jake-osf;
-    }
-    /*
- * And let's slide it in from the left
- */
-    #menuToggle input:checked~ul {
-        transform: none;
-    }
-
-    .left-header-icons, .navigation{
-        display: none !important;
-    }
-
-}
-
-@media (max-width: 800px){
-    #pics-dl{
-        grid-template-columns: 20vw 20vw 20vw !important;
-        grid-template-rows: 15vw!important;
-    }
-}
-
-
-@media (max-width: 600px) {
-    :root {
-        --border-distance: 4rem;
-    }
-    #home-body h1 {
-        font-size: 2.5rem !important;
-    }
-    #album-cover div {
-        width: calc(7 * var(--border-distance)) !important;
-    }
-    .logo-wrapper {
-        grid-template-columns: calc(3.5 * var(--border-distance)) calc(3.5 * var(--border-distance)) !important;
-    }
-
-    .header-icon {
-        height: 2.5rem !important;
-    }
-    #contact{
-        width: 85% !important;
-    }
-}
-
-
-
-#countdown-body{
-    height: 100%;
-    background-color: black;
-    background-image: url('/images/countdown/silhouette.png');
-    background-repeat: no-repeat;
-    background-size: auto 935px;
-    background-position: center;
-}
-
 @media (min-height: 935px) {
     #countdown-body {
         background-size: auto 100vh;
@@ -235,12 +42,13 @@ html {
     }
     #timer {
         font-size: 7vw !important;
+        padding-bottom: 7vw !important;
+        padding-top: 3.5vw !important;
     }
-    #message {
+    #message, #in {
         font-size: 3.5vw !important;
-        margin-top: 10vw !important;
     }
-    #wrapper-span {
+    #wrapper-span, #announcement {
         font-size: 6vw !important;
     }
     #countdown-lettering {
@@ -255,15 +63,19 @@ html {
     #countdown-body {
         background-size: auto 120vh !important;
     }
+    #countdown-body {
+        background-size: auto 120vh !important;
+    }
     #timer {
-        font-size: 6vh !important;
+        font-size: 5vh !important;
+        padding-bottom: 5vh !important;
+        padding-top: 2.5vh !important;
     }
-    #message {
-        font-size: 3vh !important;
-        margin-top: 10vh !important;
+    #message, #in {
+        font-size: 2.5vh !important;
     }
-    #wrapper-span {
-        font-size: 6vh !important;
+    #wrapper-span, #announcement {
+        font-size: 4vh !important;
     }
     #countdown-lettering {
         width: 45vh !important;
@@ -272,6 +84,18 @@ html {
         font-size: 2vh !important;
     }
 }
+
+
+
+#countdown-body{
+    height: 100%;
+    background-color: black;
+    background-image: url('/images/countdown/silhouette.png');
+    background-repeat: no-repeat;
+    background-size: auto 935px;
+    background-position: center;
+}
+
 
 #countdown-lettering {
     align-items: center;
@@ -290,7 +114,7 @@ html {
     justify-content: space-between;
     align-items: center;
     color: #ff1818;
-    height: 100%;
+    height: 70%;
     text-align: center;
     font-family: 'digital-dream';
     opacity: 1;
@@ -298,20 +122,27 @@ html {
     animation: fadein 1s;
 }
 
-#timer {
+#in{
+    flex:1;
     display: flex;
     align-items: flex-end;
-    font-size: 2.5rem;
-    margin: 0;
-    flex: 1;
-    justify-content: center;
+    font-size: 1.25rem;
 }
 
-#message {
-    margin-top: 3.75rem;
+#timer {
+    display: flex;
+    font-size: 2.5rem;
+    justify-content: center;
+    flex: 1;
+    align-items: flex-start;
+    padding-top: 1.25rem;
+    padding-bottom: 2.5rem;
+}
+
+#message{
     font-size: 1.25rem;
     line-height: 2;
-    flex: 1;
+    flex: 6;
 }
 
 #countdown-footer {
@@ -322,9 +153,6 @@ html {
     font-size: 0.7rem;
 }
 
-#countdown-footer ul .item{
-    cursor: pointer;
-}
 
 
 @keyframes fadein {
@@ -336,30 +164,34 @@ to {
 }
 }
 
-.neon-text {
+.red-text {
 text-shadow: 0 0 7px #ff1818, 0 0 10px #ff1818, 0 0 21px #ff1818, 0 0 42px darkred, 0 0 82px darkred, 0 0 92px darkred;
 }
 
-.neon-text-light {
+.red-text-light {
 text-shadow: 0 0 7px #ff1818;
 }
 
-#wrapper-span {
+#wrapper-span, #announcement {
 font-size: 2rem;
 font-weight: bold;
 }
 
 .green-text {
-cursor: pointer;
-color: #00ff00;
-text-shadow: 0 0 7px #00ff00;
+    color: #00ff00;
+    text-shadow: 0 0 7px #00ff00;
 }
 
-.green-text:hover {
-cursor: pointer;
-color: #00ff00;
-text-shadow: 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 21px #00ff00, 0 0 42px green, 0 0 82px green, 0 0 92px green, 0 0 102px green, 0 0 151px green;
+.green-hover:hover{
+    cursor: pointer;
+    text-shadow: 0 0 7px #00ff00, 0 0 10px #00ff00, 0 0 21px #00ff00, 0 0 42px green, 0 0 82px green, 0 0 92px green, 0 0 102px green, 0 0 151px green;
 }
+
+.red-hover:hover{
+    cursor: pointer;
+    text-shadow: 0 0 7px #ff1818, 0 0 10px #ff1818, 0 0 21px #ff1818, 0 0 42px #ff1818, 0 0 82px #ff1818, 0 0 92px #ff1818, 0 0 102px #ff1818, 0 0 151px #ff1818;
+}
+
 
 .flicker-unregular {
 animation: flicker-unregular 1.5s infinite alternate;
@@ -452,3 +284,43 @@ animation: flicker-regular .5s infinite;
     box-shadow: 0em -2.6em 0em 0em rgba(255, 24, 24, 0.2), 1.8em -1.8em 0 0em rgba(255, 24, 24, 0.2), 2.5em 0em 0 0em rgba(255, 24, 24, 0.2), 1.75em 1.75em 0 0em rgba(255, 24, 24, 0.2), 0em 2.5em 0 0em rgba(255, 24, 24, 0.2), -1.8em 1.8em 0 0em rgba(255, 24, 24, 0.5), -2.6em 0em 0 0em rgba(255, 24, 24, 0.7), -1.8em -1.8em 0 0em #ff1818;
 }
 }
+
+
+#announcement{
+    display: flex;
+    flex: 1;
+    line-height: 1.5;
+    height: 30%;
+    position: relative;
+}
+
+#announcement>span{
+    /*color:white;*/
+    bottom:0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    text-align: center;
+    font-family: sans-serif;
+    font-style: italic;
+    font-size:4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background:linear-gradient(#262626,#eaeaea,#262626);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+  }
+  #announcement>span:nth-child(1)
+  {
+    z-index: 2;
+  }
+  #announcement>span:nth-child(2)
+  {
+    z-index: 1;
+    text-shadow: 1px 1px 0 #262626, 2px 2px 0 #262626, 3px 3px 0 #262626,
+    4px 4px 0 #262626, 5px 5px 0 #262626, 6px 6px 0 #262626, 7px 7px 0 #262626, 1px 1px 0 #262626, 6px 20px 20px rgb(128, 113, 113),
+    -1px -1px 0 #fff;
+  }
+
