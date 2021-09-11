@@ -8,6 +8,7 @@ html {
 }
 
 
+
 @font-face {
     font-family: 'digital-dream';
     src: URL('/fonts/digital-dream.regular.ttf') format('truetype');
@@ -30,76 +31,157 @@ html {
 
 }
 
-@media (min-height: 935px) {
-    #countdown-body {
-        background-size: auto 100vh;
+
+@media (max-aspect-ratio:344/477){
+    #announcement{
+        font-size: 8vw !important;
+    } 
+}
+
+@media (max-height:750px){
+    #announcement>span:nth-child(2)
+    {
+        text-shadow: 1px 1px 0 #262626, 2px 2px 0 #262626, 3px 3px 0 #262626,
+        4px 4px 0 #262626, 5px 5px 0, 1px 1px 0 #262626, 6px 20px 20px rgb(128, 113, 113),
+        -1px -1px 0 #fff !important;
     }
 }
 
-@media (max-width: 600px) {
-    #countdown-body {
-        background-size: 260% !important;
+
+
+@media (min-aspect-ratio: 458/850) and (max-aspect-ratio: 885/850){
+    #countdown-wrapper{
+        background-size: cover !important;
     }
-    #timer {
-        font-size: 7vw !important;
-        padding-bottom: 7vw !important;
-        padding-top: 3.5vw !important;
+}
+
+
+@media (min-aspect-ratio: 458/850) and (max-height: 860px){
+    #timer{
+        font-size: 4.6vh !important;
     }
-    #message, #in {
-        font-size: 3.5vw !important;
+    .normal-font-size{
+        font-size: 2.3vh !important;
     }
-    #wrapper-span, #announcement {
-        font-size: 6vw !important;
+    #wrapper-span{
+        font-size: 3.68vh !important;
     }
     #countdown-lettering {
-        width: 55vw !important;
+        width: 34.45vh !important;
     }
-    footer ul span {
-        font-size: 2vw !important;
+    #countdown-footer {
+        font-size: 1.28vh !important;
     }
 }
 
-@media (max-height: 680px) and (min-aspect-ratio: 1/1){
-    #countdown-body {
-        background-size: auto 120vh !important;
+@media (max-aspect-ratio: 458/850){
+    #countdown-wrapper{
+        background-size: 195% auto !important;
     }
-    #countdown-body {
-        background-size: auto 120vh !important;
+}
+
+@media (max-aspect-ratio: 458/850) and (max-width:466px){
+    #timer{
+        font-size: 8.6vw !important;
     }
-    #timer {
-        font-size: 5vh !important;
-        padding-bottom: 5vh !important;
-        padding-top: 2.5vh !important;
+    .normal-font-size{
+        font-size: 4.3vw !important;
     }
-    #message, #in {
-        font-size: 2.5vh !important;
-    }
-    #wrapper-span, #announcement {
-        font-size: 4vh !important;
+    #wrapper-span{
+        font-size: 6.88vw !important;
     }
     #countdown-lettering {
-        width: 45vh !important;
+        width: 64.4vw !important;
     }
-    footer ul span {
-        font-size: 2vh !important;
+    #countdown-footer {
+        font-size: 2.4vw !important;
     }
 }
 
 
-
-#countdown-body{
+body{
     height: 100%;
     background-color: black;
-    background-image: url('/images/countdown/silhouette.png');
-    background-repeat: no-repeat;
-    background-size: auto 935px;
-    background-position: center;
 }
 
+.normal-font-size{
+    font-size: 1.25rem;
+}
+
+#announcement{
+    display: flex;
+    flex: 1;
+    line-height: 1.2;
+    height: 15%;
+    position: relative;
+    font-size: 6vh;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#announcement>span{
+    animation-duration: 1s;
+    animation-name: fall-down;
+    animation-timing-function: cubic-bezier(.55,.09,.68,.53);
+    bottom:0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background:linear-gradient(#262626,#eaeaea,#262626);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+  }
+
+#countdown-wrapper {
+    display: none;
+    background-color: black;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/images/countdown/silhouette_cropped.png);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #ff1818;
+    height: 85%;
+    text-align: center;
+    font-family: 'digital-dream';
+    opacity: 1;
+    transition: opacity 1s;
+    animation: fadein 1s;
+}
+
+
+#timer-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex: 2;
+    line-height: 1.5;
+}
+
+#puffer{
+    flex: 3;
+}
+
+
+#timer {
+    font-size: 2.5rem;
+}
+
+#message{
+    line-height: 2;
+    flex: 6;
+}
 
 #countdown-lettering {
     align-items: center;
-    justify-content:flex-end;
     width: 300px;
 }
 
@@ -108,51 +190,37 @@ html {
     width: 100%;
 }
 
-#countdown-wrapper {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: #ff1818;
-    height: 70%;
-    text-align: center;
-    font-family: 'digital-dream';
-    opacity: 1;
-    transition: opacity .5s;
-    animation: fadein 1s;
-}
-
-#in{
-    flex:1;
-    display: flex;
-    align-items: flex-end;
-    font-size: 1.25rem;
-}
-
-#timer {
-    display: flex;
-    font-size: 2.5rem;
-    justify-content: center;
-    flex: 1;
-    align-items: flex-start;
-    padding-top: 1.25rem;
-    padding-bottom: 2.5rem;
-}
-
-#message{
-    font-size: 1.25rem;
-    line-height: 2;
-    flex: 6;
-}
 
 #countdown-footer {
     z-index: 2;
 }
 
-#countdown-footer ul span {
+#countdown-footer {
     font-size: 0.7rem;
 }
 
+
+
+
+#announcement>span:nth-child(1)
+{
+z-index: 2;
+}
+#announcement>span:nth-child(2)
+{
+z-index: 1;
+text-shadow: 1px 1px 0 #262626, 2px 2px 0 #262626, 3px 3px 0 #262626,
+4px 4px 0 #262626, 5px 5px 0 #262626, 6px 6px 0 #262626, 7px 7px 0 #262626, 1px 1px 0 #262626, 6px 20px 20px rgb(128, 113, 113),
+-1px -1px 0 #fff;
+}
+
+
+@keyframes fall-down {
+    0% {bottom: 120%;}
+    100% {
+        bottom: 0%; 
+    }
+  }
 
 
 @keyframes fadein {
@@ -172,9 +240,9 @@ text-shadow: 0 0 7px #ff1818, 0 0 10px #ff1818, 0 0 21px #ff1818, 0 0 42px darkr
 text-shadow: 0 0 7px #ff1818;
 }
 
-#wrapper-span, #announcement {
-font-size: 2rem;
-font-weight: bold;
+#wrapper-span{
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .green-text {
@@ -284,43 +352,4 @@ animation: flicker-regular .5s infinite;
     box-shadow: 0em -2.6em 0em 0em rgba(255, 24, 24, 0.2), 1.8em -1.8em 0 0em rgba(255, 24, 24, 0.2), 2.5em 0em 0 0em rgba(255, 24, 24, 0.2), 1.75em 1.75em 0 0em rgba(255, 24, 24, 0.2), 0em 2.5em 0 0em rgba(255, 24, 24, 0.2), -1.8em 1.8em 0 0em rgba(255, 24, 24, 0.5), -2.6em 0em 0 0em rgba(255, 24, 24, 0.7), -1.8em -1.8em 0 0em #ff1818;
 }
 }
-
-
-#announcement{
-    display: flex;
-    flex: 1;
-    line-height: 1.5;
-    height: 30%;
-    position: relative;
-}
-
-#announcement>span{
-    /*color:white;*/
-    bottom:0;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width:100%;
-    text-align: center;
-    font-family: sans-serif;
-    font-style: italic;
-    font-size:4rem;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    background:linear-gradient(#262626,#eaeaea,#262626);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color:transparent;
-  }
-  #announcement>span:nth-child(1)
-  {
-    z-index: 2;
-  }
-  #announcement>span:nth-child(2)
-  {
-    z-index: 1;
-    text-shadow: 1px 1px 0 #262626, 2px 2px 0 #262626, 3px 3px 0 #262626,
-    4px 4px 0 #262626, 5px 5px 0 #262626, 6px 6px 0 #262626, 7px 7px 0 #262626, 1px 1px 0 #262626, 6px 20px 20px rgb(128, 113, 113),
-    -1px -1px 0 #fff;
-  }
 

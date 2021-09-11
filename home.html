@@ -42,9 +42,10 @@
                 <ul id="menu">
                     <li><img class="clickable" id="back" src="images/icons/other/arrow-left-circle.svg"
                         onclick="transitionToPage('/index.html')"></li>
-                    <li><a class="remove-hash" href=/home.html#music>MUSIC</a></li>
-                    <li><a class="remove-hash" href=/home.html#press>PRESS</a></li>
-                    <li><a class="remove-hash" href=/home.html#contact>CONTACT</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#music')">MUSIC</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#dates')">DATES</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#press')">PRESS</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#contact')">CONTACT</a></li>
                 </ul>
             </div>
 
@@ -59,11 +60,13 @@
             <nav class="header navigation">
                 <ul>
                     <!--<li class="active"><a href=/#videos>VIDEOS</a></li>-->
-                    <li><a class="remove-hash" href=/home.html#music>MUSIC</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#music')">MUSIC</a></li>
                     <span>&middot;</span>
-                    <li><a class="remove-hash" href=/home.html#press>PRESS</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#dates')">DATES</a></li>
                     <span>&middot;</span>
-                    <li><a class="remove-hash" href=/home.html#contact>CONTACT</a></li>
+                    <li><a class="clickable" onclick="scrollToSection('#press')">PRESS</a></li>
+                    <span>&middot;</span>
+                    <li><a class="clickable" onclick="scrollToSection('#contact')">CONTACT</a></li>
                 </ul>
             </nav>
 
@@ -86,10 +89,11 @@
     <div id="left"></div>
     <div id="right"></div>
     <div id="bottom">
-        <a class="remove-hash" href=/home.html#beginning>
+        <a onclick="scrollToSection('#beginning')">
             <img src="images/banner/leander-machan-lettering.png">
         </a>
     </div>
+
 
     <div id="banner">
         <picture>
@@ -131,12 +135,35 @@
                 </div>
             </div>
 
+            <div id="dates">
+                <h1>LEANDER LIVE IN CONCERT!</h1>
+                <div id="dates-wrapper">
+                    <div class="event">
+                        <div class="date">
+                            <img src="images/icons/other/calendar.svg"></br>
+                            <span>Sep 24, 7.00 PM</span>
+                        </div>
+                        <div class="place">
+                            <a target="_blank" href="https://www.google.com/maps/place/Musikschule+Haan+e.V./@51.1948261,7.006137,17z/data=!3m1!4b1!4m5!3m4!1s0x47b8d24cabf4b437:0x2a40771abd7eb24b!8m2!3d51.1946683!4d7.0083137">
+                                <img src="images/icons/other/map-pin.svg">
+                            </a></br>
+                            <span>Musikschule Haan, Dieker Straße 69, 42781 Haan</span>
+                        </div>
+                        <div class="tickets">
+                            <img src="images/icons/other/tickets.png"></br>
+                            <span>FREE, </span>
+                            <span>sign up via mail to <a href="mailto:fsj@musikschulehaan.de?subject=Anmeldung für Konzert von Leander Machan am 24.09.">fsj@musikschulehaan.de</a></span>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+
             <div id="press">
                 <h1>PRESS</h1>
                 <div id="download-wrapper">
                     <div class="preview-box">
                         <div class="download-prev" id="portraits-prev">
-                            <a href="/downloads/Portraits.zip">
+                            <a class="clickable" href="/downloads/Portraits.zip">
                                 <img src="images/icons/other/download.svg">
                             </a>
                         </div>
@@ -145,7 +172,7 @@
     
                     <div class="preview-box">
                         <div class="download-prev" id="in-action-prev">
-                            <a href="/downloads/InAction.zip">
+                            <a class="clickable" href="/downloads/InAction.zip">
                                 <img src="images/icons/other/download.svg">
                             </a>
                         </div>
@@ -154,7 +181,7 @@
     
                     <div class="preview-box">
                         <div class="download-prev" id="spotify-prev">
-                            <a href="/downloads/Spotify.zip">
+                            <a class="clickable" href="/downloads/Spotify.zip">
                                 <img src="images/icons/other/download.svg">
                             </a>
                         </div>
@@ -163,7 +190,7 @@
 
                     <div class="preview-box">
                         <div class="download-prev" id="pr-prev">
-                            <a href="/downloads/PR.zip">
+                            <a class="clickable" href="/downloads/PR.zip">
                                 <img src="images/icons/other/download.svg">
                             </a>
                         </div>
@@ -181,7 +208,9 @@
                         <input type="text" id="subject" name="subject" placeholder="Your subject">
                         <textarea id="mail-content" name="mail-content"
                             placeholder="Write anything you want to tell me :)"></textarea>
-                        <input id="submit" type="image" onclick="openClient()" src="images/icons/other/mail.svg">
+                        <div class="clickable">
+                            <input id="submit" type="image" onclick="openClient()" src="images/icons/other/mail.svg">
+                        </div>
                     </form>
                 </div id="contact-box">
             </div>

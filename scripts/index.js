@@ -45,9 +45,15 @@ setCountdownTo('September 24, 2021 19:00:00 (WET)');
 
 window.transitionToPage = function(href) {
     document.getElementById("countdown-wrapper").style.opacity = 0;
-    setTimeout(function() { 
-        window.location.href = href;
-    }, 500);
+    setTimeout(function() {
+        if (href.includes("#")){
+            page = href.split("#")[0];
+            section = href.split("#")[1];
+            sessionStorage.setItem('navToSection', "#"+section);
+            window.location.href = page;
+        }
+    }, 1000);
+
 }
 
 
