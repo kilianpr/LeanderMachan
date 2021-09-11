@@ -41,18 +41,16 @@ html {
 
 h1 {
     color: var(--cream-white);
-    font-size: var(--border-distance);
-    padding-bottom: calc(var(--border-distance) / 2);
+    margin-bottom: calc(var(--border-distance) / 2);
     text-align: center;
+    font-size: var(--border-distance);
 }
 
 p {
     margin-bottom: 1em;
   }
 
-a{
-    color: var(--blue-main);
-}
+
   
 
 #home-body{
@@ -151,6 +149,7 @@ a{
 .header-icon {
     height: calc(var(--border-distance) / 1.5);
     display: block;
+    padding: calc(var(--border-distance)/6);
 }
 
 .navigation {
@@ -184,16 +183,33 @@ span.avoidwrap {
 }
 
 .hidden {
-    visibility: hidden;
+    opacity: 0;
 }
 
 .clickable {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .clickable:hover{
+    filter: invert(100%);
+    background-color: var(--cream-white);
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.uncover{
+    animation: uncover 1s;
+}
+
+
+@keyframes uncover {
+    from { opacity: 0; }
+    to { opacity: 1}
+}
 
 
 #content-footer-wrapper{
@@ -218,7 +234,7 @@ span.avoidwrap {
 }
 
 #content h1{
-    padding-top: 10vw;
+    margin-top: 10vw;
 }
 
 
@@ -280,6 +296,7 @@ span.avoidwrap {
         width: calc(100% - 2 * var(--border-distance)) !important;
     }
 }
+
 
 @media (max-width: 1400px) {
     #home-body h1 {
@@ -419,10 +436,6 @@ span.avoidwrap {
         --border-distance: 3rem;
     }
 
-    .header-icon {
-        height: calc(var(--border-distance) / 1.5) !important;
-    }
-
     #home-body h1 {
         font-size: 2.5rem !important;
     }
@@ -516,7 +529,7 @@ span.avoidwrap {
 }
 
 #apple-music-logo {
-    background-image: url(/images/third-party/logos/apple-music/US-UK_Apple_Music_Listen_on_Lockup_all-blk_100617.svg);
+    background-image: url(/images/third-party/logos/apple-music/US-UK_Apple_Music_Listen_on_Lockup_all-blk_100617.png);
 }
 
 #deezer-logo {
@@ -525,6 +538,45 @@ span.avoidwrap {
 
 #genius-logo {
     background-image: url(/images/third-party/logos/genius/GeniusLogo.png);
+}
+
+
+#dates{
+    width: 100%;
+}
+
+
+#dates-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event{
+    display: flex;
+    flex-direction: column;
+    font-size: calc(var(--border-distance)/2);
+    font-family: ubuntu-regular;
+    text-align: center;
+    max-width: 80%;
+}
+
+.event img{
+    height: calc(var(--border-distance)*0.7);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.event > div{
+    background-color: var(--cream-white);
+    border: 2px solid black;
+    margin: calc(var(--border-distance) / 4);
+    padding: calc(var(--border-distance)/4);
+}
+
+.event a{
+    text-decoration: none;
+    color:black;
 }
 
 
@@ -564,6 +616,7 @@ span.avoidwrap {
     display: block;
     border: 2px solid black;
     margin: auto;
+    height: calc(var(--border-distance)/1.5);
 }
 
 .subtitle{
@@ -658,50 +711,11 @@ span.avoidwrap {
     padding-bottom: calc(var(--border-distance) / 12);
 }
 
-
-
-
-#dates-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.white-textbox a{
+    color: var(--blue-main);
 }
 
-.event{
-    display: flex;
-    flex-direction: column;
-    font-size: calc(var(--border-distance)/2);
-    font-family: ubuntu-regular;
-    text-align: center;
-    max-width: 80%;
-}
 
-.event img{
-    height: calc(var(--border-distance)*0.7);
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
-.event > div{
-    background-color: var(--cream-white);
-    border: 2px solid black;
-    margin: calc(var(--border-distance) / 4);
-    padding: calc(var(--border-distance)/4);
-}
 
-@keyframes bounce {
-    0%, 20%, 60%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  
-    40% {
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-    }
-  
-    80% {
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px);
-    }
-  }
+

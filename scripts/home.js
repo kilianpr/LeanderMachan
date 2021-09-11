@@ -3,13 +3,8 @@ window.addEventListener( "pageshow", function ( event ) {
     if ( event.persisted ) {
       window.location.reload();
     }
-    if(sessionStorage.getItem('navToSection')!== "null"){
-        setTimeout(function(){
-            scrollToSection(sessionStorage.getItem('navToSection'));
-            console.log(sessionStorage.getItem('navToSection'));
-            sessionStorage.setItem('navToSection', "null");
-            console.log(sessionStorage.getItem('navToSection'));
-        },1000);
+    if(sessionStorage.getItem('navToSection')!== "null" && sessionStorage.getItem('navToSection')!== null){
+        navToAnnouncementSection();
     }
     removeHash();
   });
@@ -87,4 +82,30 @@ function openClient(){
     console.log(mail_content);
     console.log(body);
     location.href = 'mailto:leander.machan@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);
+}
+
+
+function navToAnnouncementSection(){
+    document.getElementById("beginning").classList.add("stop-scrolling") //forbids the user to scroll
+    setTimeout(function(){            
+        scrollToSection(sessionStorage.getItem('navToSection')); //auto-scrolls to section
+        sessionStorage.setItem('navToSection', "null");
+
+        let boxes = document.querySelectorAll(".event > div");
+
+        for (let i=0; i<boxes.length; i++){
+            boxes[i].classList.add("hidden");
+        }
+        var i = 0;
+        var intervalID = setInterval(function () {
+            boxes[i].classList.add("uncover");
+            boxes[i].classList.remove("hidden");
+            if (++i === 3) {
+                setTimeout(function(){
+                    document.getElementById("beginning").classList.remove("stop-scrolling");
+                }, 1000)
+                window.clearInterval(intervalID);
+            }
+            }, 1000);
+    },1000);
 }

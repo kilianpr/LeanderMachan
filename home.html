@@ -40,7 +40,7 @@
                 <span></span>
                 <span></span>
                 <ul id="menu">
-                    <li><img class="clickable" id="back" src="images/icons/other/arrow-left-circle.svg"
+                    <li><img class="clickable" id="back" src="images/icons/other/arrow-left-circle.png"
                         onclick="transitionToPage('/index.html')"></li>
                     <li><a class="clickable" onclick="scrollToSection('#music')">MUSIC</a></li>
                     <li><a class="clickable" onclick="scrollToSection('#dates')">DATES</a></li>
@@ -51,7 +51,7 @@
 
             <nav class="header left header-icons">
                 <ul>
-                    <li><img class="clickable header-icon" id="back" src="images/icons/other/arrow-left-circle.svg"
+                    <li><img class="clickable header-icon" id="back" src="images/icons/other/arrow-left-circle.png"
                             onclick="transitionToPage('/index.html')"></li>
                     <!--https://feathericons.com/?query=arrow-->
                 </ul>
@@ -78,7 +78,7 @@
                     </li>
                     <li><a href="https://music.apple.com/de/artist/leander-machan/1576315117"
                             target="_blank"><img class="clickable header-icon" id="apple-music"
-                                src="images/third-party/icons/apple-music/Apple_Music_Icon_blk_sm_073120.svg"></a>
+                                src="images/third-party/icons/apple-music/Apple_Music_Icon_blk_sm_073120.png"></a>
                     </li>
                     <li><a href=https://www.instagram.com/leander.machan target="_blank"><img class="clickable header-icon"
                                 id="instagram" src="images/third-party/icons/instagram/glyph-logo_May2016.png"></a></li>
@@ -113,7 +113,7 @@
                 <div id="album-logo-wrapper">
                     <div id="album-cover">
                         <div>
-                            <img src="images/banner/Later_albumcover.jpg">
+                            <img src="images/banner/Later_albumcover_klein.jpg">
                         </div>
                     </div>
                     <div class="table-wrapper">
@@ -136,23 +136,25 @@
             </div>
 
             <div id="dates">
-                <h1>LEANDER LIVE IN CONCERT!</h1>
+                <h1 id="announcement-heading">LEANDER LIVE IN CONCERT!</h1>
                 <div id="dates-wrapper">
                     <div class="event">
-                        <div class="date">
-                            <img src="images/icons/other/calendar.svg"></br>
+                        <div class="clickable date">
+                            <img src="images/icons/other/calendar.png"></br>
                             <span>Sep 24, 7.00 PM</span>
                         </div>
-                        <div class="place">
+                        <div class="clickable place">
                             <a target="_blank" href="https://www.google.com/maps/place/Musikschule+Haan+e.V./@51.1948261,7.006137,17z/data=!3m1!4b1!4m5!3m4!1s0x47b8d24cabf4b437:0x2a40771abd7eb24b!8m2!3d51.1946683!4d7.0083137">
-                                <img src="images/icons/other/map-pin.svg">
-                            </a></br>
+                                <img src="images/icons/other/map-pin.png">
+                            </br>
                             <span>Musikschule Haan, Dieker Straße 69, 42781 Haan</span>
+                            </a>
                         </div>
-                        <div class="tickets">
+                        <div class="clickable tickets">
+                            <a href="mailto:fsj@musikschulehaan.de?subject=Anmeldung für Konzert von Leander Machan am 24.09.">
                             <img src="images/icons/other/tickets.png"></br>
                             <span>FREE, </span>
-                            <span>sign up via mail to <a href="mailto:fsj@musikschulehaan.de?subject=Anmeldung für Konzert von Leander Machan am 24.09.">fsj@musikschulehaan.de</a></span>
+                            <span>sign up via mail to fsj@musikschulehaan.de</a></span>
                         </div>
                     </div>
                 </div>           
@@ -164,7 +166,7 @@
                     <div class="preview-box">
                         <div class="download-prev" id="portraits-prev">
                             <a class="clickable" href="/downloads/Portraits.zip">
-                                <img src="images/icons/other/download.svg">
+                                <img src="images/icons/other/download.png">
                             </a>
                         </div>
                         <div class="subtitle">Leander in Action</div>
@@ -173,7 +175,7 @@
                     <div class="preview-box">
                         <div class="download-prev" id="in-action-prev">
                             <a class="clickable" href="/downloads/InAction.zip">
-                                <img src="images/icons/other/download.svg">
+                                <img src="images/icons/other/download.png">
                             </a>
                         </div>
                         <div class="subtitle">Portraits</div>
@@ -182,7 +184,7 @@
                     <div class="preview-box">
                         <div class="download-prev" id="spotify-prev">
                             <a class="clickable" href="/downloads/Spotify.zip">
-                                <img src="images/icons/other/download.svg">
+                                <img src="images/icons/other/download.png">
                             </a>
                         </div>
                         <div class="subtitle">Spotify</div>
@@ -191,7 +193,7 @@
                     <div class="preview-box">
                         <div class="download-prev" id="pr-prev">
                             <a class="clickable" href="/downloads/PR.zip">
-                                <img src="images/icons/other/download.svg">
+                                <img src="images/icons/other/download.png">
                             </a>
                         </div>
                         <div class="subtitle">PR Information</div>
@@ -208,9 +210,7 @@
                         <input type="text" id="subject" name="subject" placeholder="Your subject">
                         <textarea id="mail-content" name="mail-content"
                             placeholder="Write anything you want to tell me :)"></textarea>
-                        <div class="clickable">
-                            <input id="submit" type="image" onclick="openClient()" src="images/icons/other/mail.svg">
-                        </div>
+                        <input class="clickable" id="submit" type="image" onclick="openClient()" src="images/icons/other/mail.png">
                     </form>
                 </div id="contact-box">
             </div>
@@ -218,9 +218,9 @@
 
         <div id="home-footer">
             <ul>
-                <span class="clickable item" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
+                <span class="item" onclick="transitionToPage('/privacy-policy.html')">PRIVACY POLICY</span>
                 <span>&middot;</span>
-                <span class="clickable item" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
+                <span class="item" onclick="transitionToPage('/legal-notice.html')">LEGAL NOTICE</span>
             </ul>
         </div>
     </div>
