@@ -54,7 +54,7 @@ p {
   
 
 #home-body{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     opacity: 0;
     transition: opacity 1s;
@@ -84,6 +84,7 @@ p {
 
 #left, #right {
     top: 0;
+    height: 100vh;
     bottom: 0;
     width: var(--border-distance);
 }
@@ -252,6 +253,7 @@ span.avoidwrap {
 
 #home-footer ul .item{
     font-family: opti-jake-osf;
+    cursor: pointer;
 }
 
 
@@ -567,7 +569,7 @@ span.avoidwrap {
     margin-bottom: auto;
 }
 
-.event > div{
+.event a > div{
     background-color: var(--cream-white);
     border: 2px solid black;
     margin: calc(var(--border-distance) / 4);

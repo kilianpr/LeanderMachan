@@ -91,7 +91,7 @@ function navToAnnouncementSection(){
         scrollToSection(sessionStorage.getItem('navToSection')); //auto-scrolls to section
         sessionStorage.setItem('navToSection', "null");
 
-        let boxes = document.querySelectorAll(".event > div");
+        let boxes = document.querySelectorAll(".event a > div");
 
         for (let i=0; i<boxes.length; i++){
             boxes[i].classList.add("hidden");
