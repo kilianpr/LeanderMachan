@@ -7,6 +7,7 @@ window.addEventListener( "pageshow", function ( event ) {
         navToAnnouncementSection();
     }
     removeHash();
+    document.getElementById("bg").style.height = window.outerHeight;
   });
 
 

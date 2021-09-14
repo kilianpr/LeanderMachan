@@ -60,7 +60,7 @@ body{
     margin-top: var(--border-distance);
 }
 
-body:before {
+#bg {
   content: "";
   display: block;
   position: fixed;
@@ -75,6 +75,7 @@ body:before {
   -o-background-size: cover;
   background-size: cover;
 }
+
 
 #top {
     left: 0;
@@ -229,7 +230,7 @@ span.avoidwrap {
 
 #content-footer-wrapper{
     display: flex;
-    min-height: calc(100vh - var(--border-distance));
+    min-height: calc(100vh - 2 * var(--border-distance));
     width: calc(100% - 2 * var(--border-distance));
     flex-direction: column;
     position: relative;
