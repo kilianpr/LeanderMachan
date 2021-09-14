@@ -3,11 +3,6 @@ window.addEventListener( "pageshow", function ( event ) {
     if ( event.persisted ) {
       window.location.reload();
     }
-    if(sessionStorage.getItem('navToSection')!== "null" && sessionStorage.getItem('navToSection')!== null){
-        navToAnnouncementSection();
-    }
-    removeHash();
-    document.getElementById("bg").style.height = window.outerHeight;
   });
 
 
@@ -32,6 +27,14 @@ window.transitionToPage = function(href) {
 //adds remove-hashes functionality to buttons and sets opacity of body to 1
 document.addEventListener("DOMContentLoaded", function(){
     document.querySelector('body').style.opacity = 1;
+    document.getElementById("bg").style.height = window.outerHeight;
+    if(sessionStorage.getItem('navToSection')!== "null" && sessionStorage.getItem('navToSection')!== null){
+        navToAnnouncementSection();
+    }
+    else{
+        document.getElementById("beginning").classList.remove("stop-scrolling") //allows the user to scroll
+    }
+    removeHash();
 });
 
 function scrollToSection(section){
@@ -80,14 +83,11 @@ function openClient(){
     const subject = document.getElementById("subject").value;
     const mail_content = document.getElementById("mail-content").value;
     const body = mail_content + '\n' + '\n' + 'Best Regards' + '\n' + name;
-    console.log(mail_content);
-    console.log(body);
     location.href = 'mailto:leander.machan@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);
 }
 
 
 function navToAnnouncementSection(){
-    document.getElementById("beginning").classList.add("stop-scrolling") //forbids the user to scroll
     setTimeout(function(){            
         scrollToSection(sessionStorage.getItem('navToSection')); //auto-scrolls to section
         sessionStorage.setItem('navToSection', "null");

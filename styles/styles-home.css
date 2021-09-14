@@ -60,6 +60,28 @@ body{
     margin-top: var(--border-distance);
 }
 
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    display: inline-block !important;
+    cursor: pointer;
+    width:calc(var(--border-distance)/3);
+    height:calc(var(--border-distance)/3);
+    border:2px solid black;
+}
+
+
+input[type='checkbox']:checked:after {
+    content: " ";
+    background-image: url('/images/icons/other/check.png');
+    background-repeat: no-repeat;
+    background-size: calc(var(--border-distance)/4) calc(var(--border-distance)/4) !important;
+    position: absolute !important;
+    width:calc(var(--border-distance)/3) !important;
+    height:calc(var(--border-distance)/3) !important;
+}
+
+
 #bg {
   content: "";
   display: block;
@@ -667,7 +689,9 @@ span.avoidwrap {
 #contact form{
     font-family: ubuntu-regular;
     padding-bottom: calc(var(--border-distance) / 2);
+    font-size: calc(var(--border-distance)/3);
 }
+
 
 #contact form input, form textarea{
     display: block;
@@ -675,14 +699,16 @@ span.avoidwrap {
     background-color: var(--cream-white);
     border: 2px solid black;
     box-sizing: border-box;
-    margin-bottom: calc(var(--border-distance)/4);
-
 }
 
 #contact form input[type=text], form textarea{
     width: 100%;
     font-size: calc(var(--border-distance)/3);
     padding: calc(var(--border-distance) / 8);
+}
+
+#contact form > *{
+    margin-bottom: calc(var(--border-distance)/4);
 }
 
 #contact form textarea{
