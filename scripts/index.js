@@ -1,7 +1,6 @@
 function setCountdownTo(dateAsString){ /* Format as 'July 19, 2021 00:00:00 (WET)' */
 
     let date = new Date(dateAsString);
-    console.log(dateAsString)
 
     var i = setInterval(function(){        
         let curDate = new Date().getTime();
@@ -51,6 +50,9 @@ window.transitionToPage = function(href) {
             section = href.split("#")[1];
             sessionStorage.setItem('navToSection', "#"+section);
             window.location.href = page;
+        }
+        else {
+            window.location.href = href;
         }
     }, 1000);
 

@@ -31,14 +31,14 @@ document.addEventListener("DOMContentLoaded", function(){
     if(sessionStorage.getItem('navToSection')!== "null" && sessionStorage.getItem('navToSection')!== null){
         navToAnnouncementSection();
     }
-    else{
+    else if (window.location.href.includes("home")){
         document.getElementById("beginning").classList.remove("stop-scrolling") //allows the user to scroll
     }
+
     removeHash();
 });
 
 function scrollToSection(section){
-    console.log(section);
     const element = document.querySelector(section)
     try {
         element.scrollIntoView({
