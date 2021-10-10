@@ -38,7 +38,7 @@ function isOnLoad(){ //Checks if timer is ready, if yes, it removes the loader a
 }
 
 
-setCountdownTo('October 2, 2021 20:00:00 (WET)');
+setCountdownTo('November 27, 2021 20:00:00 (WET)');
 
 
 
