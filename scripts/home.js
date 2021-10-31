@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function(){
     if(sessionStorage.getItem('navToSection')!== "null" && sessionStorage.getItem('navToSection')!== null){
         navToAnnouncementSection();
     }
-    else if (window.location.href.includes("home")){
+    else if (location.pathname == "/"){
+        console.log(window.location.href)
         document.getElementById("beginning").classList.remove("stop-scrolling") //allows the user to scroll
     }
 

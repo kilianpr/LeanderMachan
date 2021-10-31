@@ -61,16 +61,6 @@ body{
 }
 
 
-input[type='checkbox'] {
-    -webkit-appearance:none;
-    display: inline-block !important;
-    cursor: pointer;
-    width:calc(var(--border-distance)/3);
-    height:calc(var(--border-distance)/3);
-    border:2px solid black;
-}
-
-
 input[type='checkbox']:checked:after {
     content: " ";
     background-image: url('/images/icons/other/check.png');
