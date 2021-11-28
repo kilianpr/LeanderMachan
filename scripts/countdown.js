@@ -14,7 +14,7 @@ function setCountdownTo(dateAsString){ /* Format as 'July 19, 2021 00:00:00 (WET
 
         if (differenceInMilli < 0){
             clearInterval(i);
-            document.getElementById("timer").innerHTML = "00:00:00:00";
+            document.getElementById("timer").innerHTML = "ASAP";
             isOnLoad();
         }
 

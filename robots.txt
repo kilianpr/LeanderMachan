@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /images/countdown/*
+Disallow: /images/icons/*
+Disallow: /images/third-party/*
+Disallow: /fonts/*
+Disallow: /countdown.html
+Disallow: /legal-notice.html
+Disallow: /privacy-policy.html
