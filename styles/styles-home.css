@@ -155,8 +155,6 @@ input[type='checkbox']:checked:after {
 }
 
 .header ul li{
-    padding-left: calc(var(--border-distance) / 4);
-    padding-right: calc(var(--border-distance) / 4);
     list-style: none;
     display: inline-block;
 }
@@ -178,6 +176,8 @@ input[type='checkbox']:checked:after {
     height: calc(var(--border-distance) / 1.5);
     display: block;
     padding: calc(var(--border-distance)/6);
+    margin-left: calc(var(--border-distance)/6);
+    margin-right: calc(var(--border-distance)/6);
 }
 
 .navigation {
@@ -187,6 +187,11 @@ input[type='checkbox']:checked:after {
     align-items: center;
     flex-direction: row;
     line-height: normal;
+}
+
+.navigation li{
+    padding-left: calc(var(--border-distance) / 4);
+    padding-right: calc(var(--border-distance) / 4);
 }
 
 
@@ -336,7 +341,7 @@ span.avoidwrap {
     }
 }
 
-@media (max-width: 1104px) {
+@media (max-width: 1000px) {
     #album-logo-wrapper>div {
         flex: 1 0 100% !important;
         justify-content: center !important;
