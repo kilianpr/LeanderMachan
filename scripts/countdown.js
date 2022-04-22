@@ -14,7 +14,7 @@ function setCountdownTo(dateAsString){ /* Format as 'July 19, 2021 00:00:00 (WET
 
         if (differenceInMilli < 0){
             clearInterval(i);
-            document.getElementById("timer").innerHTML = "ASAP";
+            document.getElementById("timer").innerHTML = "TIME IS UP";
             isOnLoad();
         }
 
@@ -38,7 +38,7 @@ function isOnLoad(){ //Checks if timer is ready, if yes, it removes the loader a
 }
 
 
-setCountdownTo('November 27, 2021 20:00:00 (WET)');
+setCountdownTo('May 21, 2022 15:30:00 (WET)');
 
 
 

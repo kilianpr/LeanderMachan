@@ -238,6 +238,10 @@ span.avoidwrap {
     animation: uncover 1s;
 }
 
+.nobreak{
+    white-space: nowrap;
+}
+
 
 @keyframes uncover {
     from { opacity: 0; }

@@ -101,7 +101,7 @@ function navToAnnouncementSection(){
         var intervalID = setInterval(function () {
             boxes[i].classList.add("uncover");
             boxes[i].classList.remove("hidden");
-            if (++i === 3) {
+            if (++i === boxes.length) {
                 setTimeout(function(){
                     document.getElementById("beginning").classList.remove("stop-scrolling");
                 }, 1000)
