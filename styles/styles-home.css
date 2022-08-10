@@ -175,7 +175,7 @@ input[type='checkbox']:checked:after {
 .header-icon {
     height: calc(var(--border-distance) / 1.5);
     display: block;
-    padding: calc(var(--border-distance)/6);
+    padding: 0 calc(var(--border-distance)/6) 0 calc(var(--border-distance)/6);
     margin-left: calc(var(--border-distance)/6);
     margin-right: calc(var(--border-distance)/6);
 }
@@ -225,7 +225,7 @@ span.avoidwrap {
 }
 
 .clickable:hover{
-    filter: invert(100%);
+    transform: scale(1.2);
     background-color: var(--cream-white);
 }
 
